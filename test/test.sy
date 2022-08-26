@@ -1,0 +1,16 @@
+int main()
+{
+    int i = 0;
+    int N = getint();
+    int w = getint();
+    int k = getint();
+    int mul = 0;
+    while(i < N)
+    {
+        int m = i + k;
+        int s = m * w;
+        mul = mul + s;
+        i = i + 1;
+    }
+    return mul;
+}
