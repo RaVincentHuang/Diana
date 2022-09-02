@@ -1,3 +1,0 @@
-/home/vincent/compiler2022-carol-nudt/build/CMakeFiles/rebuild_cache.dir
-/home/vincent/compiler2022-carol-nudt/build/CMakeFiles/edit_cache.dir
-/home/vincent/compiler2022-carol-nudt/build/CMakeFiles/compiler.dir
