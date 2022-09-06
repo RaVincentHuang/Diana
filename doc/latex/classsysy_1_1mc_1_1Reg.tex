@@ -1,0 +1,93 @@
+\hypertarget{classsysy_1_1mc_1_1Reg}{}\doxysection{sysy\+::mc\+::Reg Class Reference}
+\label{classsysy_1_1mc_1_1Reg}\index{sysy::mc::Reg@{sysy::mc::Reg}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a33ebf21f2d1873a7895aa6695c75a18b}\label{classsysy_1_1mc_1_1Reg_a33ebf21f2d1873a7895aa6695c75a18b}} 
+enum {\bfseries Type} \{ {\bfseries V\+I\+R\+T\+U\+AL}, 
+{\bfseries P\+HY}
+ \}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a7919447b9272ea13c53e736ccdfe2da9}\label{classsysy_1_1mc_1_1Reg_a7919447b9272ea13c53e736ccdfe2da9}} 
+enum {\bfseries Kind} \{ {\bfseries S\+R\+EG}, 
+{\bfseries V\+R\+EG}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_ae9a7b1d3ce4c6d06f38c679490879676}\label{classsysy_1_1mc_1_1Reg_ae9a7b1d3ce4c6d06f38c679490879676}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} \&other)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_ae47ede82139ba4ccc07b5e3526320413}\label{classsysy_1_1mc_1_1Reg_ae47ede82139ba4ccc07b5e3526320413}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} \&other)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a83170d33eaf0276bdacccd59ad2bb2c0}\label{classsysy_1_1mc_1_1Reg_a83170d33eaf0276bdacccd59ad2bb2c0}} 
+{\bfseries Reg} (int \+\_\+id)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a4d44b0fd95cb95512bb2cfcbc2d58e2e}\label{classsysy_1_1mc_1_1Reg_a4d44b0fd95cb95512bb2cfcbc2d58e2e}} 
+{\bfseries Reg} (int \+\_\+id, Type \+\_\+type)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a72196139e1c5cb2bd3e48b03e30b5d72}\label{classsysy_1_1mc_1_1Reg_a72196139e1c5cb2bd3e48b03e30b5d72}} 
+{\bfseries Reg} (int \+\_\+id, Type \+\_\+type, Kind \+\_\+kind)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_ae97919b21671f26613d8d5cabfc6505a}\label{classsysy_1_1mc_1_1Reg_ae97919b21671f26613d8d5cabfc6505a}} 
+std\+::string {\bfseries get\+Signature} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_aaa930e518c884a63af6859be70f89d81}\label{classsysy_1_1mc_1_1Reg_aaa930e518c884a63af6859be70f89d81}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_ad53d1d2ce8ef0907eee8d66f931f8686}\label{classsysy_1_1mc_1_1Reg_ad53d1d2ce8ef0907eee8d66f931f8686}} 
+Kind {\bfseries kind}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_abc08e95baee8323173b65d8daa80e066}\label{classsysy_1_1mc_1_1Reg_abc08e95baee8323173b65d8daa80e066}} 
+int {\bfseries id}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a51d1aa98a973c28b70f37c8179847324}\label{classsysy_1_1mc_1_1Reg_a51d1aa98a973c28b70f37c8179847324}} 
+int {\bfseries cost} = -\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ Type, std\+::string $>$ {\bfseries type\+\_\+map}
+\item 
+static std\+::map$<$ Kind, std\+::string $>$ {\bfseries kind\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a326dd3fd328efc9ed21ff2e41e8dd913}\label{classsysy_1_1mc_1_1Reg_a326dd3fd328efc9ed21ff2e41e8dd913}} 
+\index{sysy::mc::Reg@{sysy::mc::Reg}!kind\_map@{kind\_map}}
+\index{kind\_map@{kind\_map}!sysy::mc::Reg@{sysy::mc::Reg}}
+\doxysubsubsection{\texorpdfstring{kind\_map}{kind\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Reg\+::\+Kind, std\+::string $>$ sysy\+::mc\+::\+Reg\+::kind\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{Reg::SREG, \textcolor{stringliteral}{"sreg"}\}, \{Reg::VREG, \textcolor{stringliteral}{"vreg"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Reg_a6e9207032e13907bd6d0c179dfad3fa0}\label{classsysy_1_1mc_1_1Reg_a6e9207032e13907bd6d0c179dfad3fa0}} 
+\index{sysy::mc::Reg@{sysy::mc::Reg}!type\_map@{type\_map}}
+\index{type\_map@{type\_map}!sysy::mc::Reg@{sysy::mc::Reg}}
+\doxysubsubsection{\texorpdfstring{type\_map}{type\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Reg\+::\+Type, std\+::string $>$ sysy\+::mc\+::\+Reg\+::type\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{Reg::PHY, \textcolor{stringliteral}{"physical"}\}, \{Reg::VIRTUAL, \textcolor{stringliteral}{"virtual"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Reg.\+h\item 
+lib/\+Target/Reg.\+cpp\end{DoxyCompactItemize}

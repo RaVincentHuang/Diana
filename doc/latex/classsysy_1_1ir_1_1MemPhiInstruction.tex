@@ -1,0 +1,66 @@
+\hypertarget{classsysy_1_1ir_1_1MemPhiInstruction}{}\doxysection{sysy\+::ir\+::Mem\+Phi\+Instruction Class Reference}
+\label{classsysy_1_1ir_1_1MemPhiInstruction}\index{sysy::ir::MemPhiInstruction@{sysy::ir::MemPhiInstruction}}
+
+
+Inheritance diagram for sysy\+::ir\+::Mem\+Phi\+Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsysy_1_1ir_1_1MemPhiInstruction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::ir\+::Mem\+Phi\+Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsysy_1_1ir_1_1MemPhiInstruction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsysy_1_1ir_1_1MemPhiInstruction_1_1MemPhiIterator}{Mem\+Phi\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_a010e121886cf25dcb9bca01333a7ac58}\label{classsysy_1_1ir_1_1MemPhiInstruction_a010e121886cf25dcb9bca01333a7ac58}} 
+using {\bfseries index\+Range} = \mbox{\hyperlink{classsysy_1_1iterator__range}{iterator\+\_\+range}}$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1MemPhiInstruction_1_1MemPhiIterator}{Mem\+Phi\+Iterator}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_a3e9fc7278a4992234663b6ce32cf1566}\label{classsysy_1_1ir_1_1MemPhiInstruction_a3e9fc7278a4992234663b6ce32cf1566}} 
+{\bfseries Mem\+Phi\+Instruction} (\mbox{\hyperlink{classsysy_1_1ir_1_1Type}{Type}} $\ast$\+\_\+type, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$\+\_\+father, std\+::string name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_a34ff19b1c6a9acaa1b3b97a1c028431b}\label{classsysy_1_1ir_1_1MemPhiInstruction_a34ff19b1c6a9acaa1b3b97a1c028431b}} 
+{\bfseries Mem\+Phi\+Instruction} (\mbox{\hyperlink{classsysy_1_1ir_1_1Type}{Type}} $\ast$\+\_\+type, std\+::vector$<$ Value\+Block\+Pair $>$ \+\_\+predecessors, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$\+\_\+father)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_a6058e512902152bee9d7287cfc509f84}\label{classsysy_1_1ir_1_1MemPhiInstruction_a6058e512902152bee9d7287cfc509f84}} 
+size\+\_\+t {\bfseries size} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_a9c712079fb42a3a40883f0cfd14aa32d}\label{classsysy_1_1ir_1_1MemPhiInstruction_a9c712079fb42a3a40883f0cfd14aa32d}} 
+void {\bfseries set\+In\+Coming\+Value} (\mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$val, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_a8bff2770d94334007e293993020af8bb}\label{classsysy_1_1ir_1_1MemPhiInstruction_a8bff2770d94334007e293993020af8bb}} 
+void {\bfseries set\+Incoming\+BB} (unsigned index, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_ac1606780b1115b3b8d67d32c4adb1fb2}\label{classsysy_1_1ir_1_1MemPhiInstruction_ac1606780b1115b3b8d67d32c4adb1fb2}} 
+\mbox{\hyperlink{classsysy_1_1iterator__range}{index\+Range}} {\bfseries get\+Predecessors} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_ad283a6f4ab07cd526203361b79f9b67d}\label{classsysy_1_1ir_1_1MemPhiInstruction_ad283a6f4ab07cd526203361b79f9b67d}} 
+Value\+Block\+Pair {\bfseries get\+Predecessors} (unsigned i)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1MemPhiInstruction_ae035a82c6eefdc50e1cb8b668832a0d1}\label{classsysy_1_1ir_1_1MemPhiInstruction_ae035a82c6eefdc50e1cb8b668832a0d1}} 
+std\+::string {\bfseries get\+Signature} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+I\+R/Instructions.\+h\item 
+lib/\+I\+R/Instructions.\+cpp\item 
+lib/\+I\+R/I\+R\+Dump.\+cpp\end{DoxyCompactItemize}

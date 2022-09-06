@@ -20,6 +20,11 @@ T unpackAny(antlrcpp::Any&& data)
     return data.as<T>();
 }
 
+// We Use the unique_ptr as the return type.
+// there are things need to be changed:
+// 1. static cast from derived class to base class.
+// 2. change all the new to the std::make_unique().
+
 template<class T>
 std::vector<T> unpackAnyVec(antlrcpp::Any&& data)
 {
@@ -64,6 +69,7 @@ void SysYVisitor::printSrc(SysYParser::CompUnitContext* ctx)
         std::cout<< iter->toString() << std::endl << iter->getText() << std::endl;
 }
 
+// std::unique_ptr<CompUnitNode>
 antlrcpp::Any SysYVisitor::visitCompUnit(SysYParser::CompUnitContext *ctx)
 {
     // PrintMsg("visitCompUnit");
@@ -89,7 +95,8 @@ antlrcpp::Any SysYVisitor::visitCompUnit(SysYParser::CompUnitContext *ctx)
             _element.push_back(ele);
         }
     }
-    CompUnitNode* ast = new CompUnitNode(_element);
+    auto ast = std::make_unique<CompUnitNode>(_element);
+    // CompUnitNode* ast = new CompUnitNode(_element);
     return ast;
 }
 

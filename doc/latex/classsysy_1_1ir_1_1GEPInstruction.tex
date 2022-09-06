@@ -1,0 +1,63 @@
+\hypertarget{classsysy_1_1ir_1_1GEPInstruction}{}\doxysection{sysy\+::ir\+::G\+E\+P\+Instruction Class Reference}
+\label{classsysy_1_1ir_1_1GEPInstruction}\index{sysy::ir::GEPInstruction@{sysy::ir::GEPInstruction}}
+
+
+Inheritance diagram for sysy\+::ir\+::G\+E\+P\+Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsysy_1_1ir_1_1GEPInstruction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::ir\+::G\+E\+P\+Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classsysy_1_1ir_1_1GEPInstruction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsysy_1_1ir_1_1GEPInstruction_1_1IndexIterator}{Index\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_ab7970e5ee38096d52b42f40981d8a89e}\label{classsysy_1_1ir_1_1GEPInstruction_ab7970e5ee38096d52b42f40981d8a89e}} 
+using {\bfseries index\+Range} = \mbox{\hyperlink{classsysy_1_1iterator__range}{iterator\+\_\+range}}$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1GEPInstruction_1_1IndexIterator}{Index\+Iterator}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_a0ba68ccd467992c8e25ab41cfde7885d}\label{classsysy_1_1ir_1_1GEPInstruction_a0ba68ccd467992c8e25ab41cfde7885d}} 
+{\bfseries G\+E\+P\+Instruction} (\mbox{\hyperlink{classsysy_1_1ir_1_1Type}{Type}} $\ast$\+\_\+type, \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$\+\_\+ptr, std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$ $>$ \+\_\+idx\+List, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$\+\_\+father, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_a663fde04594cea0e1f35a785c37f9f67}\label{classsysy_1_1ir_1_1GEPInstruction_a663fde04594cea0e1f35a785c37f9f67}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$ {\bfseries get\+Ptr} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_ac24a4f047cf5b3802d71593682b24328}\label{classsysy_1_1ir_1_1GEPInstruction_ac24a4f047cf5b3802d71593682b24328}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$ {\bfseries get\+Index} (unsigned i)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_abf69c31fdf2aa3ec2894d55449e33ef2}\label{classsysy_1_1ir_1_1GEPInstruction_abf69c31fdf2aa3ec2894d55449e33ef2}} 
+size\+\_\+t {\bfseries size} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_af91d360592e82a4d650f7360a8f9fd62}\label{classsysy_1_1ir_1_1GEPInstruction_af91d360592e82a4d650f7360a8f9fd62}} 
+\mbox{\hyperlink{classsysy_1_1iterator__range}{index\+Range}} {\bfseries get\+Index} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_ab6b0ca07a0db2fbd72f203b5a4001cef}\label{classsysy_1_1ir_1_1GEPInstruction_ab6b0ca07a0db2fbd72f203b5a4001cef}} 
+bool {\bfseries has\+All\+Zero\+Indices} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1GEPInstruction_adc291a7825f8f3fd20c3d8d307a3dc6f}\label{classsysy_1_1ir_1_1GEPInstruction_adc291a7825f8f3fd20c3d8d307a3dc6f}} 
+std\+::string {\bfseries get\+Signature} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+I\+R/Instructions.\+h\item 
+lib/\+I\+R/Instructions.\+cpp\item 
+lib/\+I\+R/I\+R\+Dump.\+cpp\end{DoxyCompactItemize}

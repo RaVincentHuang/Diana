@@ -1,0 +1,65 @@
+\hypertarget{classsysy_1_1ir_1_1User}{}\doxysection{sysy\+::ir\+::User Class Reference}
+\label{classsysy_1_1ir_1_1User}\index{sysy::ir::User@{sysy::ir::User}}
+
+
+Inheritance diagram for sysy\+::ir\+::User\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsysy_1_1ir_1_1User__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::ir\+::User\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classsysy_1_1ir_1_1User__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_aaf91d0f3a369acf7182a0afd9cd4e553}\label{classsysy_1_1ir_1_1User_aaf91d0f3a369acf7182a0afd9cd4e553}} 
+{\bfseries User} (\mbox{\hyperlink{classsysy_1_1ir_1_1Type}{Type}} $\ast$\+\_\+type, std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$ $>$ \+\_\+operands, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a353cc68faea69800100ee34153924293}\label{classsysy_1_1ir_1_1User_a353cc68faea69800100ee34153924293}} 
+{\bfseries User} (\mbox{\hyperlink{classsysy_1_1ir_1_1Type}{Type}} $\ast$\+\_\+type, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a1a9b2f2bcf74a19cd37296908761b878}\label{classsysy_1_1ir_1_1User_a1a9b2f2bcf74a19cd37296908761b878}} 
+void {\bfseries add\+Operand} (\mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$\+\_\+value)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a4bac99e1a13ee4965fa68a4ec0de74d5}\label{classsysy_1_1ir_1_1User_a4bac99e1a13ee4965fa68a4ec0de74d5}} 
+Oprand\+List \& {\bfseries get\+Oprands} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a687a6d0b1c67b13f0f7bda3514ae2bbb}\label{classsysy_1_1ir_1_1User_a687a6d0b1c67b13f0f7bda3514ae2bbb}} 
+void {\bfseries replace\+Operand} (unsigned index, \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$\+\_\+value)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a5b7f6069b2b69b64774288cf43281da9}\label{classsysy_1_1ir_1_1User_a5b7f6069b2b69b64774288cf43281da9}} 
+void {\bfseries replace\+Operand\+With} (unsigned index, \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$\+\_\+value)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a17e3cac42be4dfb114da0881171076de}\label{classsysy_1_1ir_1_1User_a17e3cac42be4dfb114da0881171076de}} 
+void {\bfseries remove\+Operand} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Use}{Use}} $>$ \&use)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a8158c3fdc550db46fe421da7dcb7245d}\label{classsysy_1_1ir_1_1User_a8158c3fdc550db46fe421da7dcb7245d}} 
+void {\bfseries Un\+Use\+All} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a51d0b1f8abbed35d944bcb4a20aff935}\label{classsysy_1_1ir_1_1User_a51d0b1f8abbed35d944bcb4a20aff935}} 
+using {\bfseries Oprand\+List} = std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Use}{Use}} $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1User_a25fc6059a35655c39a8a52b1219f65e2}\label{classsysy_1_1ir_1_1User_a25fc6059a35655c39a8a52b1219f65e2}} 
+Oprand\+List {\bfseries operands}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+I\+R/User.\+h\item 
+lib/\+I\+R/User.\+cpp\end{DoxyCompactItemize}

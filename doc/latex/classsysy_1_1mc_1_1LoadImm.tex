@@ -1,0 +1,79 @@
+\hypertarget{classsysy_1_1mc_1_1LoadImm}{}\doxysection{sysy\+::mc\+::Load\+Imm Class Reference}
+\label{classsysy_1_1mc_1_1LoadImm}\index{sysy::mc::LoadImm@{sysy::mc::LoadImm}}
+
+
+Inheritance diagram for sysy\+::mc\+::Load\+Imm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classsysy_1_1mc_1_1LoadImm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::mc\+::Load\+Imm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classsysy_1_1mc_1_1LoadImm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a1c2e6d5e71a6a42d19ae5dc29fc2bc69}\label{classsysy_1_1mc_1_1LoadImm_a1c2e6d5e71a6a42d19ae5dc29fc2bc69}} 
+enum {\bfseries Type} \{ {\bfseries S\+L\+O\+AD}, 
+{\bfseries V\+L\+O\+AD}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a461d3dca733a49f26186cf7d2e76fd5d}\label{classsysy_1_1mc_1_1LoadImm_a461d3dca733a49f26186cf7d2e76fd5d}} 
+{\bfseries Load\+Imm} (Type \+\_\+type, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+dst, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+lhs, int \+\_\+offset)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a3b38fb174171295a4575e34f6e20e43a}\label{classsysy_1_1mc_1_1LoadImm_a3b38fb174171295a4575e34f6e20e43a}} 
+virtual std\+::string {\bfseries gen\+\_\+asm} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a9c3276d44da6bbd8367577ff907928be}\label{classsysy_1_1mc_1_1LoadImm_a9c3276d44da6bbd8367577ff907928be}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a634a0fc79b38a8dca82930748cb04e90}\label{classsysy_1_1mc_1_1LoadImm_a634a0fc79b38a8dca82930748cb04e90}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries dst}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a8a3f98ab8c1065ba303bac6ad1755c1a}\label{classsysy_1_1mc_1_1LoadImm_a8a3f98ab8c1065ba303bac6ad1755c1a}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries lhs}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a84312e3276ac2a52f097ea281fb436fb}\label{classsysy_1_1mc_1_1LoadImm_a84312e3276ac2a52f097ea281fb436fb}} 
+int {\bfseries offset}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ Type, std\+::string $>$ {\bfseries type\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1LoadImm_a1e2a1f2362bcf886c16359b32032a77d}\label{classsysy_1_1mc_1_1LoadImm_a1e2a1f2362bcf886c16359b32032a77d}} 
+\index{sysy::mc::LoadImm@{sysy::mc::LoadImm}!type\_map@{type\_map}}
+\index{type\_map@{type\_map}!sysy::mc::LoadImm@{sysy::mc::LoadImm}}
+\doxysubsubsection{\texorpdfstring{type\_map}{type\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Load\+Imm\+::\+Type, std\+::string $>$ sysy\+::mc\+::\+Load\+Imm\+::type\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{SLOAD, \textcolor{stringliteral}{"ldr"}\}, \{VLOAD, \textcolor{stringliteral}{"vldr"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Instruction.\+h\item 
+lib/\+Target/M\+C\+Instruction.\+cpp\end{DoxyCompactItemize}

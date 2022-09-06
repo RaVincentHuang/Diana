@@ -1,0 +1,59 @@
+\hypertarget{classsysy_1_1mc_1_1Module}{}\doxysection{sysy\+::mc\+::Module Class Reference}
+\label{classsysy_1_1mc_1_1Module}\index{sysy::mc::Module@{sysy::mc::Module}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a35c037ce2194c792162c5765195082cc}\label{classsysy_1_1mc_1_1Module_a35c037ce2194c792162c5765195082cc}} 
+std\+::vector$<$ int $>$ {\bfseries reg\+\_\+allocate} (\mbox{\hyperlink{structsysy_1_1mc_1_1RegAllocStat}{Reg\+Alloc\+Stat}} $\ast$stat)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_aaa72c25a23dfff83b7e75e52a552b5ce}\label{classsysy_1_1mc_1_1Module_aaa72c25a23dfff83b7e75e52a552b5ce}} 
+{\bfseries Module} (\mbox{\hyperlink{classsysy_1_1ir_1_1Module}{ir\+::\+Module}} $\ast$ir, int \+\_\+argc)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_af4506bb213d9972705c4ebe3fcc72c83}\label{classsysy_1_1mc_1_1Module_af4506bb213d9972705c4ebe3fcc72c83}} 
+void {\bfseries run} (std\+::string file\+\_\+name)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a52529f8fd609b6ccb229eb84ec4bd2a5}\label{classsysy_1_1mc_1_1Module_a52529f8fd609b6ccb229eb84ec4bd2a5}} 
+std\+::string {\bfseries gen\+\_\+global} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a30edb7c0b197863298f78c3e4d39ae96}\label{classsysy_1_1mc_1_1Module_a30edb7c0b197863298f78c3e4d39ae96}} 
+void {\bfseries gen\+\_\+asm} (std\+::string file\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_aa1671af7bf3c70606b21ac844da72417}\label{classsysy_1_1mc_1_1Module_aa1671af7bf3c70606b21ac844da72417}} 
+std\+::list$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Function}{Function}} $\ast$ $>$ {\bfseries functions}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a22d43d6977241a9c091baab1299ac536}\label{classsysy_1_1mc_1_1Module_a22d43d6977241a9c091baab1299ac536}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1GlobalObject}{Global\+Object}} $\ast$ $>$ {\bfseries global\+\_\+objects}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a9d40b2fdf9d729ce90dae419e8ac421e}\label{classsysy_1_1mc_1_1Module_a9d40b2fdf9d729ce90dae419e8ac421e}} 
+bool {\bfseries data\+\_\+flag} = false
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a09eae0a0174a98845012b33e17079120}\label{classsysy_1_1mc_1_1Module_a09eae0a0174a98845012b33e17079120}} 
+bool {\bfseries bss\+\_\+flag} = false
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_af6964ce23008f598e0344432ae52063d}\label{classsysy_1_1mc_1_1Module_af6964ce23008f598e0344432ae52063d}} 
+int {\bfseries argc}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a29462a195cf0b05572e621db0061ffa8}\label{classsysy_1_1mc_1_1Module_a29462a195cf0b05572e621db0061ffa8}} 
+bool {\bfseries create\+\_\+threads} = false
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a54788841bcd791fbdeee1f300d4a5fc0}\label{classsysy_1_1mc_1_1Module_a54788841bcd791fbdeee1f300d4a5fc0}} 
+std\+::map$<$ int, \mbox{\hyperlink{classsysy_1_1mc_1_1GlobalObject}{Global\+Object}} $\ast$ $>$ {\bfseries float\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_ad50da6a1fc57a9667322f740fc7abaec}\label{classsysy_1_1mc_1_1Module_ad50da6a1fc57a9667322f740fc7abaec}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Function}{ir\+::\+Function}} $\ast$, \mbox{\hyperlink{classsysy_1_1mc_1_1Function}{Function}} $\ast$ $>$ {\bfseries func\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_a227f79ffd862ebde2e25c2da43e5147b}\label{classsysy_1_1mc_1_1Module_a227f79ffd862ebde2e25c2da43e5147b}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1GlobalValue}{ir\+::\+Global\+Value}} $\ast$, \mbox{\hyperlink{classsysy_1_1mc_1_1GlobalObject}{Global\+Object}} $\ast$ $>$ {\bfseries global\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Module_afedc8e563753c4dbbea4fe5332e940c6}\label{classsysy_1_1mc_1_1Module_afedc8e563753c4dbbea4fe5332e940c6}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1GlobalObject}{Global\+Object}} $\ast$, \mbox{\hyperlink{classsysy_1_1ir_1_1GlobalValue}{ir\+::\+Global\+Value}} $\ast$ $>$ {\bfseries rev\+\_\+global\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Module.\+h\item 
+lib/\+Target/M\+C\+Module.\+cpp\end{DoxyCompactItemize}

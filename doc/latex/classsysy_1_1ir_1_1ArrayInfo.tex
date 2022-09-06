@@ -1,0 +1,58 @@
+\hypertarget{classsysy_1_1ir_1_1ArrayInfo}{}\doxysection{sysy\+::ir\+::Array\+Info Class Reference}
+\label{classsysy_1_1ir_1_1ArrayInfo}\index{sysy::ir::ArrayInfo@{sysy::ir::ArrayInfo}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a69ce1ee56815d2751a1f27bd4d7416de}\label{classsysy_1_1ir_1_1ArrayInfo_a69ce1ee56815d2751a1f27bd4d7416de}} 
+using {\bfseries iterator} = std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$, std\+::set$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Instruction}{Instruction}} $\ast$, cmps $>$ $>$\+::iterator
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a82c9b8033c9731fa067db922d4101103}\label{classsysy_1_1ir_1_1ArrayInfo_a82c9b8033c9731fa067db922d4101103}} 
+size\+\_\+t {\bfseries store\+Size} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a639372b7e791b047acc57d6ed3c0cc1e}\label{classsysy_1_1ir_1_1ArrayInfo_a639372b7e791b047acc57d6ed3c0cc1e}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1Instruction}{Instruction}} $\ast$ {\bfseries get\+Only\+Store} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_ac3456290eecf5f24946191885bb5450d}\label{classsysy_1_1ir_1_1ArrayInfo_ac3456290eecf5f24946191885bb5450d}} 
+\mbox{\hyperlink{classsysy_1_1iterator__range}{iterator\+\_\+range}}$<$ iterator $>$ {\bfseries get} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a5e50b7a75aa49c8714d163d4f1ba5590}\label{classsysy_1_1ir_1_1ArrayInfo_a5e50b7a75aa49c8714d163d4f1ba5590}} 
+std\+::set$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$ $>$ \& {\bfseries get\+Block} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a0c8ed7c1c0c8f6b2ef149273d4d114cf}\label{classsysy_1_1ir_1_1ArrayInfo_a0c8ed7c1c0c8f6b2ef149273d4d114cf}} 
+std\+::set$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$ $>$ \& {\bfseries get\+Def\+Blocks} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_ac5ddacc267102495a8f7bc8396c7bb6a}\label{classsysy_1_1ir_1_1ArrayInfo_ac5ddacc267102495a8f7bc8396c7bb6a}} 
+std\+::set$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$ $>$ \& {\bfseries get\+Use\+Blocks} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a8ccb6cea6fb1724db3b803e2dbe6d577}\label{classsysy_1_1ir_1_1ArrayInfo_a8ccb6cea6fb1724db3b803e2dbe6d577}} 
+std\+::set$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Instruction}{Instruction}} $\ast$, cmps $>$ \& {\bfseries get\+Store} (\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a220ef1a3637214a52a343ae468868f5c}\label{classsysy_1_1ir_1_1ArrayInfo_a220ef1a3637214a52a343ae468868f5c}} 
+std\+::set$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1LoadInstruction}{Load\+Inst}} $\ast$, cmpl $>$ \& {\bfseries get\+Load} (\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a141d89cf07b24f29554efbd9dd70afde}\label{classsysy_1_1ir_1_1ArrayInfo_a141d89cf07b24f29554efbd9dd70afde}} 
+void {\bfseries set\+Store\+Phi} (\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb, \mbox{\hyperlink{classsysy_1_1ir_1_1MemPhiInstruction}{Mem\+Phi\+Inst}} $\ast$\+\_\+phi)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a886fc66b2535676e17e708d2dcaafacb}\label{classsysy_1_1ir_1_1ArrayInfo_a886fc66b2535676e17e708d2dcaafacb}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1MemPhiInstruction}{Mem\+Phi\+Inst}} $\ast$ {\bfseries get\+Store\+Phi} (\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_ad305c14f578ab3b9fcfedd70fad0f910}\label{classsysy_1_1ir_1_1ArrayInfo_ad305c14f578ab3b9fcfedd70fad0f910}} 
+size\+\_\+t {\bfseries storephi\+Size} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_ab200ba8278b660ee896b2accf5d53c63}\label{classsysy_1_1ir_1_1ArrayInfo_ab200ba8278b660ee896b2accf5d53c63}} 
+void {\bfseries set\+Load\+Phi} (\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb, \mbox{\hyperlink{classsysy_1_1ir_1_1MemPhiInstruction}{Mem\+Phi\+Inst}} $\ast$\+\_\+phi)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_a00fbf1f62013ebbcae4907dd56f32762}\label{classsysy_1_1ir_1_1ArrayInfo_a00fbf1f62013ebbcae4907dd56f32762}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1MemPhiInstruction}{Mem\+Phi\+Inst}} $\ast$ {\bfseries get\+Load\+Phi} (\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1ArrayInfo_aeed6e84cd362a5f403b9e407ead7d9ff}\label{classsysy_1_1ir_1_1ArrayInfo_aeed6e84cd362a5f403b9e407ead7d9ff}} 
+size\+\_\+t {\bfseries load\+Phi\+Size} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Transform/\+Utils/Memory\+S\+S\+A.\+h\end{DoxyCompactItemize}

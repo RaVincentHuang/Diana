@@ -115,6 +115,13 @@ define dso_local i32 @getint() #0 {
   ret i32 %3
 }
 
+define dso_local float @getfloat() #0 {
+  %1 = alloca float, align 4
+  %2 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.2, i64 0, i64 0), float* %1)
+  %3 = load float, float* %1, align 4
+  ret float %3
+}
+
 define dso_local i32 @getarray(i32* %0) #0 {
   %2 = alloca i32*, align 8
   %3 = alloca i32, align 4

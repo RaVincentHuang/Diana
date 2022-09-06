@@ -21,30 +21,18 @@ public:
     if(child != nullptr)            \
     {                               \
         child->setParent(this);     \
-        this->addChildren(child);   \            
+        this->addChildren(child.get());   \            
 }
 
 #define SET_IT_PARENT_VEC(vec)      \
-    for(auto iter : vec)            \
+    for(auto& iter : vec)            \
     {                               \
         iter->setParent(this);      \
-        this->addChildren(iter);   \
+        this->addChildren(iter.get());   \
     }
 
 #define FREE_VEC(vec)               \
-    for(auto iter : vec)            \
-        delete iter;
-
-// TODO  
-#define TODOLIST() do                                                          \
-{                                                                              \
-    TODO("Features yet to be added:");      \
-    TODO("Frontend->");                     \
-    TODO("\tASTgen");                       \
-    TODO("\tSyntax check");                 \
-    TODO("\tSemantic check");             \
-    TODO("\tMlirgen");                    \
-    TODO("Backend");                      \
-} while(false)
+    for(auto& iter : vec)            \
+        iter.reset();
 
 #endif

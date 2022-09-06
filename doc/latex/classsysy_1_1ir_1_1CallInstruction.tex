@@ -1,0 +1,69 @@
+\hypertarget{classsysy_1_1ir_1_1CallInstruction}{}\doxysection{sysy\+::ir\+::Call\+Instruction Class Reference}
+\label{classsysy_1_1ir_1_1CallInstruction}\index{sysy::ir::CallInstruction@{sysy::ir::CallInstruction}}
+
+
+Inheritance diagram for sysy\+::ir\+::Call\+Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classsysy_1_1ir_1_1CallInstruction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::ir\+::Call\+Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classsysy_1_1ir_1_1CallInstruction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsysy_1_1ir_1_1CallInstruction_1_1ArgIterator}{Arg\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_a144a23a7a26af636fdba7390a7fb9c83}\label{classsysy_1_1ir_1_1CallInstruction_a144a23a7a26af636fdba7390a7fb9c83}} 
+using {\bfseries arg\+Range} = \mbox{\hyperlink{classsysy_1_1iterator__range}{iterator\+\_\+range}}$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1CallInstruction_1_1ArgIterator}{Arg\+Iterator}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_a0a41223126617079c780561e5544ac0b}\label{classsysy_1_1ir_1_1CallInstruction_a0a41223126617079c780561e5544ac0b}} 
+{\bfseries Call\+Instruction} (\mbox{\hyperlink{classsysy_1_1ir_1_1Function}{Function}} $\ast$\+\_\+callee, std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$ $>$ \+\_\+args, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$\+\_\+father, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_a916151348941432110e8fe00939a630b}\label{classsysy_1_1ir_1_1CallInstruction_a916151348941432110e8fe00939a630b}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1Function}{Function}} $\ast$ {\bfseries get\+Callee} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_a52df54835a7c1e00adbff8cdfce32ca5}\label{classsysy_1_1ir_1_1CallInstruction_a52df54835a7c1e00adbff8cdfce32ca5}} 
+\mbox{\hyperlink{classsysy_1_1iterator__range}{arg\+Range}} {\bfseries get\+Args} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_ad9fd18f7cf84aac4d82254cde8c34876}\label{classsysy_1_1ir_1_1CallInstruction_ad9fd18f7cf84aac4d82254cde8c34876}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$ {\bfseries get\+Args} (unsigned index)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_ae94323826a74e2911b80e8d417696b7b}\label{classsysy_1_1ir_1_1CallInstruction_ae94323826a74e2911b80e8d417696b7b}} 
+size\+\_\+t {\bfseries size} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_a25534b364e7e5daad7408347aa97a1ef}\label{classsysy_1_1ir_1_1CallInstruction_a25534b364e7e5daad7408347aa97a1ef}} 
+bool {\bfseries is\+Pure\+Call} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_aa77efd2588ee52b4ac0d53f5245c3f4d}\label{classsysy_1_1ir_1_1CallInstruction_aa77efd2588ee52b4ac0d53f5245c3f4d}} 
+std\+::string {\bfseries get\+Signature} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1CallInstruction_a5b496eee5b5b2e06109dc456e0844920}\label{classsysy_1_1ir_1_1CallInstruction_a5b496eee5b5b2e06109dc456e0844920}} 
+bool {\bfseries has\+Alias} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+I\+R/Instructions.\+h\item 
+lib/\+I\+R/Instructions.\+cpp\item 
+lib/\+I\+R/I\+R\+Dump.\+cpp\end{DoxyCompactItemize}

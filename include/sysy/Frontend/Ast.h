@@ -3,6 +3,7 @@
 #include "sysy/Frontend/AstType.h"
 #include "sysy/Frontend/SysYOp.h"
 #include <vector>
+#include <memory>
 
 
 namespace sysy 
@@ -24,17 +25,11 @@ class VarDefNode;
 class InitValNode;
 class LvalNode;
 
-class PrototypeNode;
+// class PrototypeNode;// TODO add the PrototypeNode
 
 
 class ExprNode;
-// class AddExprNode;
 class CondExprNode;
-// class LOrExprNode;
-// class LAndExprNode;
-// class EqExprNode;
-// class RelExprNode;
-// class MulExprNode;
 class UnaryExprNode;
 class PrimaryExprNode;
 
@@ -74,9 +69,6 @@ public:
         AST_lOrExp,
         AST_unaryExp,
         AST_binaryExp,
-        // AST_ConditionExp,
-        // AST_ConditionUnaryExp,
-        // AST_ConditionBinaryExp,
         AST_functCallExp,
         AST_primaryExp,
         AST_lVal,
@@ -87,16 +79,12 @@ public:
     };
 public:
     AstKind kind;
-    AstNode* parent;
+    AstNode* parent; // Dangerous: maybe there is memory leak.
     std::vector<AstNode*> children;
 
     AstNode(AstKind _kind)
         : kind(_kind)
         , parent(nullptr) {}
-    // AstNode()
-    //     : loc()
-    //     , kind(AST_Undefined)
-    //     , parent(nullptr) {}
     
     virtual ~AstNode() {}
 
@@ -116,21 +104,15 @@ public:
 class CompUnitNode : public AstNode
 {
 public:
-    std::vector<AstNode*> element;
-    // std::vector<FuncDefNode*> funcDef;
-    // std::vector<DeclNode*> decl;
-
-    // CompUnitNode(const Location& _loc, std::vector<FuncDefNode*> _funcDef, 
-    //             std::vector<DeclNode*> _decl, std::vector<AstNode*> _element);
+    std::vector<std::unique_ptr<AstNode>> element;
     
-    CompUnitNode(std::vector<AstNode*> _element);
+    CompUnitNode(std::vector<std::unique_ptr<AstNode>> _element);
 
     ~CompUnitNode();
 
-    // Need override getSignature.
     std::string getSignature() const override;
 
-    std::vector<PrototypeNode*>& getPrototype();
+    // std::vector<PrototypeNode*>& getPrototype();
 
     std::string getStr() const { return "compUnit"; }
 
@@ -143,11 +125,12 @@ class FuncDefNode : public AstNode
 public:
     AstType funcType;
     std::string funcName;
-    FuncParamListNode* funcParamList;
-    BlockNode* block;
+    std::unique_ptr<FuncParamListNode> funcParamList;
+    std::unique_ptr<BlockNode> block;
 
     FuncDefNode(AstType _funcType, std::string _funcName,
-                FuncParamListNode* _funcParamList, BlockNode* _block);
+                std::unique_ptr<FuncParamListNode> _funcParamList, 
+                std::unique_ptr<BlockNode> _block);
     ~FuncDefNode();
 
     std::string getSignature() const override;
@@ -161,9 +144,9 @@ public:
 class FuncParamListNode : public AstNode
 {
 public:
-    std::vector<FuncParamNode*> funcParam;
+    std::vector<std::unique_ptr<FuncParamNode>> funcParam;
 
-    FuncParamListNode(std::vector<FuncParamNode*> _funcParam);
+    FuncParamListNode(std::vector<std::unique_ptr<FuncParamNode>> _funcParam);
     ~FuncParamListNode();
 
     std::string getSignature() const override;
@@ -215,8 +198,6 @@ public:
     bool is_const;
     AstType type;
 
-    virtual std::string getName() { return "globalVar"; };
-
     DeclNode(AstKind _kind, bool _is_const, AstType _type)
             : StmtNode(_kind), is_const(_is_const), type(_type) {}
     ~DeclNode() {}
@@ -231,13 +212,11 @@ public:
 class ConstDeclNode : public DeclNode
 {
 public:
-    std::vector<ConstDefNode*> constDef;
+    std::vector<std::unique_ptr<ConstDefNode>> constDef;
 
     ConstDeclNode(AstType _type, 
-                    std::vector<ConstDefNode*> _constDef);
+                    std::vector<std::unique_ptr<ConstDefNode>> _constDef);
     ~ConstDeclNode();
-
-    // std::string getName() { return constDef }
 
     std::string getSignature() const override;
 
@@ -248,9 +227,9 @@ public:
 class VarDeclNode : public DeclNode
 {
 public:
-    std::vector<VarDefNode*> varDef;
+    std::vector<std::unique_ptr<VarDefNode>> varDef;
 
-    VarDeclNode(AstType _type, std::vector<VarDefNode*> _varDef);
+    VarDeclNode(AstType _type, std::vector<std::unique_ptr<VarDefNode>> _varDef);
     ~VarDeclNode();
 
     std::string getSignature() const override;
@@ -263,12 +242,13 @@ class ConstDefNode : public AstNode
 {
 public:
     std::vector<int> dimSize;
-    InitValNode* constInitVal;
+    std::unique_ptr<InitValNode> constInitVal;
     std::string name;
 
-    ConstDefNode(std::vector<int> _dimSize, InitValNode* _constInitVal, std::string _name);
+    ConstDefNode(std::vector<int> _dimSize, 
+                    std::unique_ptr<InitValNode> _constInitVal, std::string _name);
     ~ConstDefNode();
-
+ 
     std::string getSignature() const override;
 
     /// LLVM style RTTI
@@ -279,10 +259,11 @@ class VarDefNode : public AstNode
 {
 public:
     std::vector<int> dimSize;
-    InitValNode* varInitVal;
+    std::unique_ptr<InitValNode> varInitVal;
     std::string name;
 
-    VarDefNode(std::vector<int> _dimSize, InitValNode* _varInitVal, std::string _name);
+    VarDefNode(std::vector<int> _dimSize, 
+                std::unique_ptr<InitValNode> _varInitVal, std::string _name);
 
     VarDefNode(std::vector<int> _dimSize, std::string _name);
 
@@ -297,9 +278,9 @@ public:
 class InitValNode : public AstNode
 {
 public:
-    std::vector<ExprNode*> initItem;
+    std::vector<std::unique_ptr<ExprNode>> initItem;
 
-    InitValNode(std::vector<ExprNode*> _initItem);
+    InitValNode(std::vector<std::unique_ptr<ExprNode>> _initItem);
     ~InitValNode();
 
     std::string getSignature() const override;
@@ -311,10 +292,11 @@ public:
 class AssignStmtNode : public StmtNode
 {
 public:
-    LvalNode* lval;
-    ExprNode* expr;
+    std::unique_ptr<LvalNode> lval;
+    std::unique_ptr<ExprNode> expr;
 
-    AssignStmtNode(LvalNode* _lval, ExprNode* _expr);
+    AssignStmtNode(std::unique_ptr<LvalNode> _lval, 
+                    std::unique_ptr<ExprNode> _expr);
     ~AssignStmtNode();
 
     std::string getSignature() const override;
@@ -326,9 +308,9 @@ public:
 class ExprStmtNode : public StmtNode
 {
 public:
-    ExprNode* expr;
+    std::unique_ptr<ExprNode> expr;
 
-    ExprStmtNode(ExprNode* _expr);
+    ExprStmtNode(std::unique_ptr<ExprNode> _expr);
     ~ExprStmtNode();
 
     std::string getSignature() const override;
@@ -340,10 +322,12 @@ public:
 class IfStmtNode : public StmtNode
 {
 public:
-    ExprNode* cond;
-    StmtNode* thenBlock,* elseBlock;
+    std::unique_ptr<ExprNode> cond;
+    std::unique_ptr<StmtNode> thenBlock, elseBlock;
     
-    IfStmtNode(ExprNode* _cond, StmtNode* _thenBlock, StmtNode* _elseBlock);
+    IfStmtNode(std::unique_ptr<ExprNode> _cond, 
+                std::unique_ptr<StmtNode> _thenBlock, 
+                std::unique_ptr<StmtNode> _elseBlock);
     ~IfStmtNode();
 
     std::string getSignature() const override;
@@ -355,11 +339,13 @@ public:
 class ForStmtNode : public StmtNode
 {
 public:
-    StmtNode* initial,* increment,* stmt;
-    ExprNode* cond;
+    std::unique_ptr<StmtNode> initial, increment, stmt;
+    std::unique_ptr<ExprNode> cond;
 
-    ForStmtNode(StmtNode* _initial, ExprNode* _cond,
-                StmtNode* _increment, StmtNode* _stmt);
+    ForStmtNode(std::unique_ptr<StmtNode> _initial, 
+                std::unique_ptr<ExprNode> _cond,
+                std::unique_ptr<StmtNode> _increment, 
+                std::unique_ptr<StmtNode> _stmt);
     ~ForStmtNode();
 
     std::string getSignature() const override;
@@ -371,10 +357,10 @@ public:
 class WhileStmtNode : public StmtNode
 {
 public:
-    ExprNode* cond;
-    StmtNode* stmt;
+    std::unique_ptr<ExprNode> cond;
+    std::unique_ptr<StmtNode> stmt;
 
-    WhileStmtNode(ExprNode* _cond, StmtNode* _stmt);
+    WhileStmtNode(std::unique_ptr<ExprNode> _cond, std::unique_ptr<StmtNode> _stmt);
     ~WhileStmtNode();
 
     std::string getSignature() const override;
@@ -414,10 +400,10 @@ public:
 class ReturnStmtNode : public StmtNode
 {
 public:
-    ExprNode* expr;
+    std::unique_ptr<ExprNode> expr;
     bool has_ret_val;
 
-    ReturnStmtNode(ExprNode* _expr);
+    ReturnStmtNode(std::unique_ptr<ExprNode> _expr);
     ReturnStmtNode();
     ~ReturnStmtNode();
 
@@ -427,29 +413,29 @@ public:
     static bool classof(const AstNode* c) { return c->getKind() == AST_returnStmt; }
 };
 
+// TODO add the PrototypeNode
+// class PrototypeNode : public DeclNode
+// {
+// public:
+//     std::string funcName;
+//     FuncParamListNode* funcParamList;
 
-class PrototypeNode : public DeclNode
-{
-public:
-    std::string funcName;
-    FuncParamListNode* funcParamList;
+//     PrototypeNode(bool _is_const, AstType _type,
+//                     std::string _funcName, FuncParamListNode* _funcParamList);
+//     ~PrototypeNode();
 
-    PrototypeNode(bool _is_const, AstType _type,
-                    std::string _funcName, FuncParamListNode* _funcParamList);
-    ~PrototypeNode();
+//     std::string getSignature() const override;
 
-    std::string getSignature() const override;
-
-    /// LLVM style RTTI
-    static bool classof(const AstNode* c) { return c->getKind() == AST_prototype; }
-};
+//     /// LLVM style RTTI
+//     static bool classof(const AstNode* c) { return c->getKind() == AST_prototype; }
+// };
 
 class BlockNode : public StmtNode
 {
 public:
-    std::vector<StmtNode*> blockItems;
+    std::vector<std::unique_ptr<StmtNode>> blockItems; 
 
-    BlockNode(std::vector<StmtNode*> _blockItems);
+    BlockNode(std::vector<std::unique_ptr<StmtNode>> _blockItems);
     ~BlockNode();
 
     std::string getSignature() const override;
@@ -479,9 +465,10 @@ class UnaryExprNode : public ExprNode
 {
 public:
     UnaryOp op;
-    ExprNode* expr;
+    std::unique_ptr<ExprNode> expr;
+    // ExprNode* expr;
 
-    UnaryExprNode(AstType _type, UnaryOp _op, ExprNode* _unaryExpr);
+    UnaryExprNode(AstType _type, UnaryOp _op, std::unique_ptr<ExprNode> _unaryExpr);
 
     ~UnaryExprNode();
 
@@ -497,9 +484,10 @@ class BinaryExprNode : public ExprNode
 public:
     bool shortCircuit;
     BinaryOp op;
-    ExprNode* lhs,* rhs;
+    std::unique_ptr<ExprNode> lhs, rhs;
 
-    BinaryExprNode(AstType _type, BinaryOp _op, ExprNode* _lhs, ExprNode* _rhs);
+    BinaryExprNode(AstType _type, BinaryOp _op, 
+                    std::unique_ptr<ExprNode> _lhs, std::unique_ptr<ExprNode> _rhs);
     ~BinaryExprNode();
 
     std::string getSignature() const override;
@@ -512,10 +500,12 @@ class FunctionCallExprNode : public ExprNode
 {
 public:
     std::string funcName;
-    std::vector<ExprNode*> funcParamList;
+    std::vector<std::unique_ptr<ExprNode>> funcParamList;
+    // std::vector<ExprNode*> funcParamList;
     std::string format;
 
-    FunctionCallExprNode(AstType _type, std::string funcName, std::vector<ExprNode*> funcParamList);
+    FunctionCallExprNode(AstType _type, std::string funcName, 
+                            std::vector<std::unique_ptr<ExprNode>> funcParamList);
     ~FunctionCallExprNode();
 
     std::string getSignature() const override;
@@ -526,12 +516,12 @@ class LvalNode : public ExprNode
 {
 public:
     std::string variable;
-    std::vector<ExprNode*> indexExpr;
+    std::vector<std::unique_ptr<ExprNode>> indexExpr;
     std::vector<int> dimSize;
 
-    LvalNode(AstType _type, std::string _variable, std::vector<ExprNode*> _indexExpr);
+    LvalNode(AstType _type, std::string _variable, std::vector<std::unique_ptr<ExprNode>> _indexExpr);
     
-    LvalNode(AstType _type, std::string _variable, std::vector<ExprNode*> _indexExpr, std::vector<int> _dimSize);
+    LvalNode(AstType _type, std::string _variable, std::vector<std::unique_ptr<ExprNode>> _indexExpr, std::vector<int> _dimSize);
 
     ~LvalNode();
 

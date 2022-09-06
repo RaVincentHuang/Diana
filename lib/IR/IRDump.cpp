@@ -322,7 +322,7 @@ std::string dumpIR(Module* mod)
             str += "declare " + func->getSignature() + "\n\n";
         else
             str += "define " + func->getSignature() + "\n\n";
-    // std::cout << str << std::endl;
+    std::cout << str << std::endl;
 
     return str;
 }

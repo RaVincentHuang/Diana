@@ -1,0 +1,73 @@
+\hypertarget{classsysy_1_1mc_1_1Pop}{}\doxysection{sysy\+::mc\+::Pop Class Reference}
+\label{classsysy_1_1mc_1_1Pop}\index{sysy::mc::Pop@{sysy::mc::Pop}}
+
+
+Inheritance diagram for sysy\+::mc\+::Pop\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classsysy_1_1mc_1_1Pop__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::mc\+::Pop\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classsysy_1_1mc_1_1Pop__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Pop_a740649d3e7d83caa720e1572b7493520}\label{classsysy_1_1mc_1_1Pop_a740649d3e7d83caa720e1572b7493520}} 
+enum {\bfseries Type} \{ {\bfseries S\+P\+OP}, 
+{\bfseries V\+P\+OP}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Pop_a9ff46d650facc0f6f5a6d37e683bde27}\label{classsysy_1_1mc_1_1Pop_a9ff46d650facc0f6f5a6d37e683bde27}} 
+{\bfseries Pop} (Type \+\_\+type, std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ \+\_\+regs)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Pop_a3d7c39417a06282f2ca8492670ba49f2}\label{classsysy_1_1mc_1_1Pop_a3d7c39417a06282f2ca8492670ba49f2}} 
+virtual std\+::string {\bfseries gen\+\_\+asm} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Pop_a3a97b044d0212294e297149e142936e8}\label{classsysy_1_1mc_1_1Pop_a3a97b044d0212294e297149e142936e8}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Pop_a11e0d8754c949f138064fa716143c30d}\label{classsysy_1_1mc_1_1Pop_a11e0d8754c949f138064fa716143c30d}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries regs}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ Type, std\+::string $>$ {\bfseries type\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Pop_a1a5f9bbe2cff008d45fccfed920e5ef8}\label{classsysy_1_1mc_1_1Pop_a1a5f9bbe2cff008d45fccfed920e5ef8}} 
+\index{sysy::mc::Pop@{sysy::mc::Pop}!type\_map@{type\_map}}
+\index{type\_map@{type\_map}!sysy::mc::Pop@{sysy::mc::Pop}}
+\doxysubsubsection{\texorpdfstring{type\_map}{type\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Pop\+::\+Type, std\+::string $>$ sysy\+::mc\+::\+Pop\+::type\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{SPOP, \textcolor{stringliteral}{"pop"}\}, \{VPOP, \textcolor{stringliteral}{"vpop"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Instruction.\+h\item 
+lib/\+Target/M\+C\+Instruction.\+cpp\end{DoxyCompactItemize}

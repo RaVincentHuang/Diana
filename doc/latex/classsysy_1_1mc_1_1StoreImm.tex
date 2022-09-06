@@ -1,0 +1,79 @@
+\hypertarget{classsysy_1_1mc_1_1StoreImm}{}\doxysection{sysy\+::mc\+::Store\+Imm Class Reference}
+\label{classsysy_1_1mc_1_1StoreImm}\index{sysy::mc::StoreImm@{sysy::mc::StoreImm}}
+
+
+Inheritance diagram for sysy\+::mc\+::Store\+Imm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classsysy_1_1mc_1_1StoreImm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::mc\+::Store\+Imm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classsysy_1_1mc_1_1StoreImm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_a90d7b1c0cdbef0746f5033859d4eda88}\label{classsysy_1_1mc_1_1StoreImm_a90d7b1c0cdbef0746f5033859d4eda88}} 
+enum {\bfseries Type} \{ {\bfseries S\+S\+T\+O\+RE}, 
+{\bfseries V\+S\+T\+O\+RE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_a4f1393921e06f0c122f9157f20749b05}\label{classsysy_1_1mc_1_1StoreImm_a4f1393921e06f0c122f9157f20749b05}} 
+{\bfseries Store\+Imm} (Type \+\_\+type, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+dst, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+lhs, int \+\_\+offset)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_acdcc0a846311f9e165de0f2c9f97685f}\label{classsysy_1_1mc_1_1StoreImm_acdcc0a846311f9e165de0f2c9f97685f}} 
+virtual std\+::string {\bfseries gen\+\_\+asm} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_a9e5a3c845a2d0473ee1e5267c02bd6df}\label{classsysy_1_1mc_1_1StoreImm_a9e5a3c845a2d0473ee1e5267c02bd6df}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_a049cad7ab5612101d6baa150498986da}\label{classsysy_1_1mc_1_1StoreImm_a049cad7ab5612101d6baa150498986da}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries dst}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_a576d6a78bdbad3bbe16dc7ed358640d1}\label{classsysy_1_1mc_1_1StoreImm_a576d6a78bdbad3bbe16dc7ed358640d1}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries lhs}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_a82137c0f4847257a6453ffd3bc86b677}\label{classsysy_1_1mc_1_1StoreImm_a82137c0f4847257a6453ffd3bc86b677}} 
+int {\bfseries offset}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ Type, std\+::string $>$ {\bfseries type\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreImm_a13e6e8fa97e24ce48c3f883dc7cd3905}\label{classsysy_1_1mc_1_1StoreImm_a13e6e8fa97e24ce48c3f883dc7cd3905}} 
+\index{sysy::mc::StoreImm@{sysy::mc::StoreImm}!type\_map@{type\_map}}
+\index{type\_map@{type\_map}!sysy::mc::StoreImm@{sysy::mc::StoreImm}}
+\doxysubsubsection{\texorpdfstring{type\_map}{type\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Store\+Imm\+::\+Type, std\+::string $>$ sysy\+::mc\+::\+Store\+Imm\+::type\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{SSTORE, \textcolor{stringliteral}{"str"}\}, \{VSTORE, \textcolor{stringliteral}{"vstr"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Instruction.\+h\item 
+lib/\+Target/M\+C\+Instruction.\+cpp\end{DoxyCompactItemize}

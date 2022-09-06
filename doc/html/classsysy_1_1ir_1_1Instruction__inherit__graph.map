@@ -1,0 +1,20 @@
+<map id="sysy::ir::Instruction" name="sysy::ir::Instruction">
+<area shape="rect" id="node1" title=" " alt="" coords="320,208,465,235"/>
+<area shape="rect" id="node4" href="$classsysy_1_1ir_1_1BinaryInstrcution.html" title=" " alt="" coords="527,81,714,108"/>
+<area shape="rect" id="node5" href="$classsysy_1_1ir_1_1DeadInstruction.html" title=" " alt="" coords="531,132,710,159"/>
+<area shape="rect" id="node6" href="$classsysy_1_1ir_1_1MemoryInstruction.html" title=" " alt="" coords="521,183,720,209"/>
+<area shape="rect" id="node13" href="$classsysy_1_1ir_1_1MoveInstruction.html" title=" " alt="" coords="530,233,711,260"/>
+<area shape="rect" id="node14" href="$classsysy_1_1ir_1_1TerminatorInstruction.html" title=" " alt="" coords="513,309,728,336"/>
+<area shape="rect" id="node18" href="$classsysy_1_1ir_1_1UnaryInstruction.html" title=" " alt="" coords="529,360,713,387"/>
+<area shape="rect" id="node2" href="$classsysy_1_1ir_1_1User.html" title=" " alt="" coords="165,208,272,235"/>
+<area shape="rect" id="node3" href="$classsysy_1_1ir_1_1Value.html" title=" " alt="" coords="5,208,117,235"/>
+<area shape="rect" id="node7" href="$classsysy_1_1ir_1_1AllocaInstruction.html" title=" " alt="" coords="783,5,968,32"/>
+<area shape="rect" id="node8" href="$classsysy_1_1ir_1_1GEPInstruction.html" title=" " alt="" coords="790,56,961,83"/>
+<area shape="rect" id="node9" href="$classsysy_1_1ir_1_1LoadInstruction.html" title=" " alt="" coords="787,107,963,133"/>
+<area shape="rect" id="node10" href="$classsysy_1_1ir_1_1MemPhiInstruction.html" title=" " alt="" coords="776,157,975,184"/>
+<area shape="rect" id="node11" href="$classsysy_1_1ir_1_1PhiInstruction.html" title=" " alt="" coords="793,208,958,235"/>
+<area shape="rect" id="node12" href="$classsysy_1_1ir_1_1StoreInstruction.html" title=" " alt="" coords="786,259,965,285"/>
+<area shape="rect" id="node15" href="$classsysy_1_1ir_1_1BrInstruction.html" title=" " alt="" coords="796,309,955,336"/>
+<area shape="rect" id="node16" href="$classsysy_1_1ir_1_1CallInstruction.html" title=" " alt="" coords="790,360,961,387"/>
+<area shape="rect" id="node17" href="$classsysy_1_1ir_1_1RetInstruction.html" title=" " alt="" coords="792,411,959,437"/>
+</map>

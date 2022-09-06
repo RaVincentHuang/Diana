@@ -1,0 +1,206 @@
+\hypertarget{classsysy_1_1mc_1_1Function}{}\doxysection{sysy\+::mc\+::Function Class Reference}
+\label{classsysy_1_1mc_1_1Function}\index{sysy::mc::Function@{sysy::mc::Function}}
+
+
+Collaboration diagram for sysy\+::mc\+::Function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classsysy_1_1mc_1_1Function__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ab45d1120bf128e5189ddd0c89ff23b55}\label{classsysy_1_1mc_1_1Function_ab45d1120bf128e5189ddd0c89ff23b55}} 
+enum {\bfseries Type} \{ {\bfseries All\+Int}, 
+{\bfseries All\+Float}, 
+{\bfseries Int\+Float}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a06d9b2a0bc9a18c535634e4c13601aef}\label{classsysy_1_1mc_1_1Function_a06d9b2a0bc9a18c535634e4c13601aef}} 
+void {\bfseries reg\+\_\+alloc} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ad6e5f7e819d3d8bc51413f29042bb0d1}\label{classsysy_1_1mc_1_1Function_ad6e5f7e819d3d8bc51413f29042bb0d1}} 
+void {\bfseries merge\+\_\+block} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a216b04343e2ded07a9a70a032f272b6b}\label{classsysy_1_1mc_1_1Function_a216b04343e2ded07a9a70a032f272b6b}} 
+std\+::vector$<$ int $>$ {\bfseries reg\+\_\+allocate} (\mbox{\hyperlink{structsysy_1_1mc_1_1RegAllocStat}{Reg\+Alloc\+Stat}} $\ast$stat)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ac0d4516aa3bfcb84a265e565b143f9fd}\label{classsysy_1_1mc_1_1Function_ac0d4516aa3bfcb84a265e565b143f9fd}} 
+void {\bfseries calc\+\_\+live} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a4d540aac461e96a159a47724738f3005}\label{classsysy_1_1mc_1_1Function_a4d540aac461e96a159a47724738f3005}} 
+int {\bfseries nearest\+Legal\+Imm} (int x)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ac06c45931719ab8693d8145b1c743c95}\label{classsysy_1_1mc_1_1Function_ac06c45931719ab8693d8145b1c743c95}} 
+void {\bfseries split\+SP} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a5e8a57e680c88cd148bfef70304d1262}\label{classsysy_1_1mc_1_1Function_a5e8a57e680c88cd148bfef70304d1262}} 
+{\bfseries Function} (std\+::string \+\_\+name, \mbox{\hyperlink{classsysy_1_1mc_1_1Module}{Module}} $\ast$\+\_\+father, bool \+\_\+is\+\_\+declared, int \+\_\+arg\+\_\+num)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_acfb838cc2742698229fdc9675a0ed1e5}\label{classsysy_1_1mc_1_1Function_acfb838cc2742698229fdc9675a0ed1e5}} 
+void {\bfseries analyse\+Func} (\mbox{\hyperlink{classsysy_1_1ir_1_1Function}{ir\+::\+Function}} $\ast$func)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a4f69cca5f9411ae106015bda77071e3a}\label{classsysy_1_1mc_1_1Function_a4f69cca5f9411ae106015bda77071e3a}} 
+void {\bfseries recompute\+\_\+offset} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ac3eb6a3ffd092ace6fa90d953904ab00}\label{classsysy_1_1mc_1_1Function_ac3eb6a3ffd092ace6fa90d953904ab00}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries get\+\_\+reg} (int value, \mbox{\hyperlink{classsysy_1_1mc_1_1Block}{Block}} $\ast$block)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a37607bc441e3bbd80ec8c27c9c2008f3}\label{classsysy_1_1mc_1_1Function_a37607bc441e3bbd80ec8c27c9c2008f3}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries get\+\_\+reg} (float value, \mbox{\hyperlink{classsysy_1_1mc_1_1Block}{Block}} $\ast$block)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_af063979e92ada5243b92cfbe493d9497}\label{classsysy_1_1mc_1_1Function_af063979e92ada5243b92cfbe493d9497}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries get\+\_\+reg} (\mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$value, \mbox{\hyperlink{classsysy_1_1mc_1_1Block}{Block}} $\ast$block)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_af3ac6e731d52aa78d8977f4d76cd642a}\label{classsysy_1_1mc_1_1Function_af3ac6e731d52aa78d8977f4d76cd642a}} 
+std\+::string {\bfseries gen\+\_\+asm} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a59709af8c9c6dbddd1ce1144adef6747}\label{classsysy_1_1mc_1_1Function_a59709af8c9c6dbddd1ce1144adef6747}} 
+static bool {\bfseries analyse\+Imm} (int x)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_af5ddaff65b84d9e55ca0b8825ebb3c46}\label{classsysy_1_1mc_1_1Function_af5ddaff65b84d9e55ca0b8825ebb3c46}} 
+static int {\bfseries get\+Float\+Int} (float x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_afa09e1c8769f0b1bcb873b00b9816b79}\label{classsysy_1_1mc_1_1Function_afa09e1c8769f0b1bcb873b00b9816b79}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a3698f30e01222f2448a1fb57f73b09e8}\label{classsysy_1_1mc_1_1Function_a3698f30e01222f2448a1fb57f73b09e8}} 
+std\+::string {\bfseries name}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a286d189f551303a66d0052d61d4d4a4d}\label{classsysy_1_1mc_1_1Function_a286d189f551303a66d0052d61d4d4a4d}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Module}{Module}} $\ast$ {\bfseries father}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_aa1273352c03b160cb7f76e9476405b7b}\label{classsysy_1_1mc_1_1Function_aa1273352c03b160cb7f76e9476405b7b}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Block}{Block}} $\ast$ {\bfseries entry}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a4e22c1dc53aed45f777a29e716d89241}\label{classsysy_1_1mc_1_1Function_a4e22c1dc53aed45f777a29e716d89241}} 
+std\+::list$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Block}{Block}} $\ast$ $>$ {\bfseries blocks}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a3d67dbeba26dcb79f8ba2dd590a653d6}\label{classsysy_1_1mc_1_1Function_a3d67dbeba26dcb79f8ba2dd590a653d6}} 
+int {\bfseries stack\+\_\+size}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ae062a54f833fc7d1f25d33b13d5c7c31}\label{classsysy_1_1mc_1_1Function_ae062a54f833fc7d1f25d33b13d5c7c31}} 
+int {\bfseries arg\+\_\+num}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a65b61a464913865ae7cf708a84a548b6}\label{classsysy_1_1mc_1_1Function_a65b61a464913865ae7cf708a84a548b6}} 
+std\+::map$<$ int, int $>$ {\bfseries offset}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a2d04e345beacfdcc4703c019892da2fb}\label{classsysy_1_1mc_1_1Function_a2d04e345beacfdcc4703c019892da2fb}} 
+std\+::map$<$ int, int $>$ {\bfseries offset\+\_\+v}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a86a59d7d72cfb334b8cdc077487d9c92}\label{classsysy_1_1mc_1_1Function_a86a59d7d72cfb334b8cdc077487d9c92}} 
+std\+::map$<$ int, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries off\+\_\+reg}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_abb69a3eef6b9e319b96a3c86230176f4}\label{classsysy_1_1mc_1_1Function_abb69a3eef6b9e319b96a3c86230176f4}} 
+int {\bfseries sp} =1
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a25fc0c830977f4d8939e7d781d9a4169}\label{classsysy_1_1mc_1_1Function_a25fc0c830977f4d8939e7d781d9a4169}} 
+int {\bfseries push\+\_\+reg\+\_\+num} =0
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a4fa51175f0eceda2b77f18e7abcb7758}\label{classsysy_1_1mc_1_1Function_a4fa51175f0eceda2b77f18e7abcb7758}} 
+bool {\bfseries is\+\_\+declared}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ac0f354076920bb8ac2812613f042917d}\label{classsysy_1_1mc_1_1Function_ac0f354076920bb8ac2812613f042917d}} 
+int {\bfseries spill\+\_\+count} =0
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_aa46e95410be08b2436490dbf9c3c5005}\label{classsysy_1_1mc_1_1Function_aa46e95410be08b2436490dbf9c3c5005}} 
+int {\bfseries reg\+\_\+num} = 0
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_afe5c69b2b494ed272d2b8e102e3d625d}\label{classsysy_1_1mc_1_1Function_afe5c69b2b494ed272d2b8e102e3d625d}} 
+int {\bfseries vreg\+\_\+num} = 0
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a186fc9268e367d3c9502a3c4b37e5f04}\label{classsysy_1_1mc_1_1Function_a186fc9268e367d3c9502a3c4b37e5f04}} 
+int {\bfseries align8} = 0
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_acf96941440aa9b6fc01540e057bf1db3}\label{classsysy_1_1mc_1_1Function_acf96941440aa9b6fc01540e057bf1db3}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$ $>$ {\bfseries move\+\_\+arg\+\_\+list}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a2a1d5e2f3d0ea0021acb5f1a44269f9e}\label{classsysy_1_1mc_1_1Function_a2a1d5e2f3d0ea0021acb5f1a44269f9e}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$ $>$ {\bfseries move\+\_\+global\+\_\+list}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a2f37d13a060d2b24ab12ed860c045199}\label{classsysy_1_1mc_1_1Function_a2f37d13a060d2b24ab12ed860c045199}} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries float\+\_\+address\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a06ca0fc1dc0077a144b117cdcd837fbe}\label{classsysy_1_1mc_1_1Function_a06ca0fc1dc0077a144b117cdcd837fbe}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$, int $>$ {\bfseries alloc\+\_\+offset}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ad0d3b3ee60403f12cff5f00433fd1465}\label{classsysy_1_1mc_1_1Function_ad0d3b3ee60403f12cff5f00433fd1465}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$ $>$ {\bfseries alloc\+\_\+list}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a5cbd6430d22171dad536c466921c78a9}\label{classsysy_1_1mc_1_1Function_a5cbd6430d22171dad536c466921c78a9}} 
+std\+::set$<$ int $>$ {\bfseries use\+\_\+regs}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ad7a194ba44ef04a4da4f8960edb07fe3}\label{classsysy_1_1mc_1_1Function_ad7a194ba44ef04a4da4f8960edb07fe3}} 
+std\+::set$<$ int $>$ {\bfseries spilling\+\_\+nodes}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ae15ee6051a53ca5f4930f7ab2990fc0f}\label{classsysy_1_1mc_1_1Function_ae15ee6051a53ca5f4930f7ab2990fc0f}} 
+std\+::set$<$ int $>$ {\bfseries spilling\+\_\+nodes\+\_\+v}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a4f317712bdd41706b9e23170b48319fa}\label{classsysy_1_1mc_1_1Function_a4f317712bdd41706b9e23170b48319fa}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Function_1_1Arg}{ir\+::\+Function\+::\+Arg}} $\ast$, int $>$ {\bfseries arg\+\_\+idx}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ad6bccd7197daeb6d5225bcff8c6b43d7}\label{classsysy_1_1mc_1_1Function_ad6bccd7197daeb6d5225bcff8c6b43d7}} 
+std\+::map$<$ int, \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$ $>$ {\bfseries rev\+\_\+arg\+\_\+idx}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a8c16395bc464d1f489bff60263a05fa2}\label{classsysy_1_1mc_1_1Function_a8c16395bc464d1f489bff60263a05fa2}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries value\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a733276bfa283ea998fe7c8818d4d9315}\label{classsysy_1_1mc_1_1Function_a733276bfa283ea998fe7c8818d4d9315}} 
+std\+::map$<$ int, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries const\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a7423e57c36f423b9c2f589d1956d188b}\label{classsysy_1_1mc_1_1Function_a7423e57c36f423b9c2f589d1956d188b}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1AllocaInstruction}{ir\+::\+Alloca\+Inst}} $\ast$, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries store\+\_\+alloc\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a1e72d3b032f56681177bf15388d94c35}\label{classsysy_1_1mc_1_1Function_a1e72d3b032f56681177bf15388d94c35}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{ir\+::\+Basic\+Block}} $\ast$, \mbox{\hyperlink{classsysy_1_1mc_1_1Block}{Block}} $\ast$ $>$ {\bfseries block\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ad0c25eb918fbb651a03bb9b40cf4bd68}\label{classsysy_1_1mc_1_1Function_ad0c25eb918fbb651a03bb9b40cf4bd68}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$, int $>$ {\bfseries alloc\+\_\+address}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a4d6a6ddee8554f650e724c1827d59ca6}\label{classsysy_1_1mc_1_1Function_a4d6a6ddee8554f650e724c1827d59ca6}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$, int $>$ {\bfseries stack\+\_\+object\+\_\+offset}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a67d9227be56a7af0ad8713f80b81dedf}\label{classsysy_1_1mc_1_1Function_a67d9227be56a7af0ad8713f80b81dedf}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$, int $>$ {\bfseries arg\+\_\+offset}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a7080b1f247a7daf9952638831034c264}\label{classsysy_1_1mc_1_1Function_a7080b1f247a7daf9952638831034c264}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$, int $>$ {\bfseries gep\+\_\+list}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a86cba3afd24d4c9a061ff44aae6fb6f4}\label{classsysy_1_1mc_1_1Function_a86cba3afd24d4c9a061ff44aae6fb6f4}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$, int $>$ {\bfseries gep\+\_\+map}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ab4fc16e9cae54b5b523b1b0987488aed}\label{classsysy_1_1mc_1_1Function_ab4fc16e9cae54b5b523b1b0987488aed}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$, int $>$ {\bfseries gep\+\_\+with\+\_\+constant}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_ad892c905de5648e289cccc84aec60587}\label{classsysy_1_1mc_1_1Function_ad892c905de5648e289cccc84aec60587}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$, std\+::pair$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$, int $>$ $>$ {\bfseries gep\+\_\+with\+\_\+shift}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a4d5c94cd2f2edaca705a6db151745af5}\label{classsysy_1_1mc_1_1Function_a4d5c94cd2f2edaca705a6db151745af5}} 
+std\+::map$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{ir\+::\+Value}} $\ast$, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries gep\+\_\+with\+\_\+reg}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a71224b471fb7feff9848118c3b009ed7}\label{classsysy_1_1mc_1_1Function_a71224b471fb7feff9848118c3b009ed7}} 
+std\+::set$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Block}{Block}} $\ast$ $>$ {\bfseries return\+\_\+blocks}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a97435e5625bf8e68bedf7133702789b9}\label{classsysy_1_1mc_1_1Function_a97435e5625bf8e68bedf7133702789b9}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$ $>$ {\bfseries sub\+\_\+sp\+\_\+list}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Function_a03694ace29e4b67a626b4d77e2b0bb91}\label{classsysy_1_1mc_1_1Function_a03694ace29e4b67a626b4d77e2b0bb91}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Instruction}{Instruction}} $\ast$ $>$ {\bfseries add\+\_\+sp\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Function.\+h\item 
+lib/\+Target/M\+C\+Function.\+cpp\end{DoxyCompactItemize}

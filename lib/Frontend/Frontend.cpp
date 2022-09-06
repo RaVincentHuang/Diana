@@ -87,23 +87,23 @@ ir::Module* FrontendMain(const std::string& filename, const std::string& Gen)
         PrintMsg("After IPDCE");
         ir::dumpIR(mod);
 
-        // auto ipo = new ir::ModulePassManager;
-        // ipo->addPass(new ir::FunctionInline);
+        auto ipo = new ir::ModulePassManager;
+        ipo->addPass(new ir::FunctionInline);
 
-        // ipo->run(mod);
-        // PrintMsg("After function inline");
-        // ir::dumpIR(mod);
+        ipo->run(mod);
+        PrintMsg("After function inline");
+        ir::dumpIR(mod);
 
-        // scala->run(mod);
-        // ir::dumpIR(mod);
+        scala->run(mod);
+        ir::dumpIR(mod);
         
-        // auto loop = new ir::LoopVariablePass;
-        // loop->run(mod);
+        auto loop = new ir::LoopVariablePass;
+        loop->run(mod);
 
-        // scala->run(mod);
+        scala->run(mod);
         
-        // PrintMsg("After Loop opt");
-        // ir::dumpIR(mod);
+        PrintMsg("After Loop opt");
+        ir::dumpIR(mod);
 
 
         // auto unset = new ir::UnsetSSA;

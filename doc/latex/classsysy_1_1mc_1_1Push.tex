@@ -1,0 +1,73 @@
+\hypertarget{classsysy_1_1mc_1_1Push}{}\doxysection{sysy\+::mc\+::Push Class Reference}
+\label{classsysy_1_1mc_1_1Push}\index{sysy::mc::Push@{sysy::mc::Push}}
+
+
+Inheritance diagram for sysy\+::mc\+::Push\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classsysy_1_1mc_1_1Push__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::mc\+::Push\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classsysy_1_1mc_1_1Push__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Push_a8baeea74af458cb0bfafa548fc7bb32a}\label{classsysy_1_1mc_1_1Push_a8baeea74af458cb0bfafa548fc7bb32a}} 
+enum {\bfseries Type} \{ {\bfseries S\+P\+U\+SH}, 
+{\bfseries V\+P\+U\+SH}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Push_a34cfb180a5ce1d7edef4e6b436ade832}\label{classsysy_1_1mc_1_1Push_a34cfb180a5ce1d7edef4e6b436ade832}} 
+{\bfseries Push} (Type \+\_\+type, std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ \+\_\+regs)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Push_a35392e3636ca06707e079442e3f0e8fb}\label{classsysy_1_1mc_1_1Push_a35392e3636ca06707e079442e3f0e8fb}} 
+virtual std\+::string {\bfseries gen\+\_\+asm} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Push_a7ee41009c33e42e5442608f57112c520}\label{classsysy_1_1mc_1_1Push_a7ee41009c33e42e5442608f57112c520}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Push_a2503516a7728872027b46b623053e47f}\label{classsysy_1_1mc_1_1Push_a2503516a7728872027b46b623053e47f}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ $>$ {\bfseries regs}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ Type, std\+::string $>$ {\bfseries type\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1Push_a150dd149f712d26cf34c71430ad3609c}\label{classsysy_1_1mc_1_1Push_a150dd149f712d26cf34c71430ad3609c}} 
+\index{sysy::mc::Push@{sysy::mc::Push}!type\_map@{type\_map}}
+\index{type\_map@{type\_map}!sysy::mc::Push@{sysy::mc::Push}}
+\doxysubsubsection{\texorpdfstring{type\_map}{type\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Push\+::\+Type, std\+::string $>$ sysy\+::mc\+::\+Push\+::type\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{SPUSH, \textcolor{stringliteral}{"push"}\}, \{VPUSH, \textcolor{stringliteral}{"vpush"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Instruction.\+h\item 
+lib/\+Target/M\+C\+Instruction.\+cpp\end{DoxyCompactItemize}

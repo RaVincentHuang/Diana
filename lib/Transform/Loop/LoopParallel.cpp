@@ -89,12 +89,7 @@ bool LoopParallel::isParallelizable(Loop* loop)
                 auto ptr = store->getPtr();
                 auto val = store->getValue();
                 if(!loop->isLoopInvariant(val))
-<<<<<<< HEAD
-                    if(func->getName() != "mv")
-                        return false;
-=======
                     return false;
->>>>>>> dffff4d42aee0af80875d23b31c322e022946d47
                 if(auto alloca = dynamic_cast<AllocaInst*>(ptr); alloca 
                     && !(alloca->getAllocatedType()->isArrayTy() && alloca->getAllocatedType()->isPointerTy()))
                     continue;

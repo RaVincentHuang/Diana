@@ -1,0 +1,77 @@
+\hypertarget{classsysy_1_1mc_1_1CompareReg}{}\doxysection{sysy\+::mc\+::Compare\+Reg Class Reference}
+\label{classsysy_1_1mc_1_1CompareReg}\index{sysy::mc::CompareReg@{sysy::mc::CompareReg}}
+
+
+Inheritance diagram for sysy\+::mc\+::Compare\+Reg\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classsysy_1_1mc_1_1CompareReg__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::mc\+::Compare\+Reg\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classsysy_1_1mc_1_1CompareReg__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1CompareReg_aceee5d7abddac2ac005e4b1976d7d8a5}\label{classsysy_1_1mc_1_1CompareReg_aceee5d7abddac2ac005e4b1976d7d8a5}} 
+enum {\bfseries Type} \{ {\bfseries C\+MP}, 
+{\bfseries C\+MN}, 
+{\bfseries V\+C\+MP}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1CompareReg_af67c8c9ce904b51889b2150ac4191690}\label{classsysy_1_1mc_1_1CompareReg_af67c8c9ce904b51889b2150ac4191690}} 
+{\bfseries Compare\+Reg} (Type \+\_\+type, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+lhs, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+rhs)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1CompareReg_a8a2bcc99ee918343776cacbc22e8f56c}\label{classsysy_1_1mc_1_1CompareReg_a8a2bcc99ee918343776cacbc22e8f56c}} 
+virtual std\+::string {\bfseries gen\+\_\+asm} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1CompareReg_a566b3d308793641fcaf6fc8cace0b585}\label{classsysy_1_1mc_1_1CompareReg_a566b3d308793641fcaf6fc8cace0b585}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1CompareReg_a63a039cb50baec048ad61bd277843439}\label{classsysy_1_1mc_1_1CompareReg_a63a039cb50baec048ad61bd277843439}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries lhs}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1CompareReg_a446b39ea638854d64fc5fd623c3352c2}\label{classsysy_1_1mc_1_1CompareReg_a446b39ea638854d64fc5fd623c3352c2}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries rhs}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ Type, std\+::string $>$ {\bfseries type\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1CompareReg_a518cffb5feb7203e21e61b1302c57aa4}\label{classsysy_1_1mc_1_1CompareReg_a518cffb5feb7203e21e61b1302c57aa4}} 
+\index{sysy::mc::CompareReg@{sysy::mc::CompareReg}!type\_map@{type\_map}}
+\index{type\_map@{type\_map}!sysy::mc::CompareReg@{sysy::mc::CompareReg}}
+\doxysubsubsection{\texorpdfstring{type\_map}{type\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Compare\+Reg\+::\+Type, std\+::string $>$ sysy\+::mc\+::\+Compare\+Reg\+::type\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{CMP, \textcolor{stringliteral}{"cmp"}\}, \{CMN, \textcolor{stringliteral}{"cmn"}\}, \{VCMP, \textcolor{stringliteral}{"vcmp"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Instruction.\+h\item 
+lib/\+Target/M\+C\+Instruction.\+cpp\end{DoxyCompactItemize}

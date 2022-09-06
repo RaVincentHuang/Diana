@@ -1,0 +1,85 @@
+\hypertarget{classsysy_1_1mc_1_1StoreReg}{}\doxysection{sysy\+::mc\+::Store\+Reg Class Reference}
+\label{classsysy_1_1mc_1_1StoreReg}\index{sysy::mc::StoreReg@{sysy::mc::StoreReg}}
+
+
+Inheritance diagram for sysy\+::mc\+::Store\+Reg\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classsysy_1_1mc_1_1StoreReg__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::mc\+::Store\+Reg\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classsysy_1_1mc_1_1StoreReg__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_af3e7766dd73ee438d06e8d4d299ebf77}\label{classsysy_1_1mc_1_1StoreReg_af3e7766dd73ee438d06e8d4d299ebf77}} 
+enum {\bfseries Type} \{ {\bfseries S\+S\+T\+O\+RE}, 
+{\bfseries V\+S\+T\+O\+RE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_a44da2d9dd29b0ff764124b817b5e7c5e}\label{classsysy_1_1mc_1_1StoreReg_a44da2d9dd29b0ff764124b817b5e7c5e}} 
+{\bfseries Store\+Reg} (Type \+\_\+type, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+dst, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+lhs, \mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$\+\_\+rhs)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_a6f6cc7da52ec522ef6c180825d370ee5}\label{classsysy_1_1mc_1_1StoreReg_a6f6cc7da52ec522ef6c180825d370ee5}} 
+void {\bfseries set\+Shift} (\mbox{\hyperlink{classsysy_1_1mc_1_1Shift}{Shift}} $\ast$\+\_\+shift)
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_a2528c7019071829a9616cf59638133d0}\label{classsysy_1_1mc_1_1StoreReg_a2528c7019071829a9616cf59638133d0}} 
+virtual std\+::string {\bfseries gen\+\_\+asm} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_a426b1a3820076af75d7830fb1e9dab55}\label{classsysy_1_1mc_1_1StoreReg_a426b1a3820076af75d7830fb1e9dab55}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_a6ef5406ca32772061fda942153d39342}\label{classsysy_1_1mc_1_1StoreReg_a6ef5406ca32772061fda942153d39342}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries dst}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_a4cd88e3d85ab2fd3aa552a93a0a681be}\label{classsysy_1_1mc_1_1StoreReg_a4cd88e3d85ab2fd3aa552a93a0a681be}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries lhs}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_a9f50a7763ee653e6c7eeb7238e0b753e}\label{classsysy_1_1mc_1_1StoreReg_a9f50a7763ee653e6c7eeb7238e0b753e}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Reg}{Reg}} $\ast$ {\bfseries rhs}
+\item 
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_ad655ee6531578bd9967f4a9a94404a3c}\label{classsysy_1_1mc_1_1StoreReg_ad655ee6531578bd9967f4a9a94404a3c}} 
+\mbox{\hyperlink{classsysy_1_1mc_1_1Shift}{Shift}} $\ast$ {\bfseries shift}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ Type, std\+::string $>$ {\bfseries type\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsysy_1_1mc_1_1StoreReg_aff69b425e2c11643abfeaa10cd04f7c4}\label{classsysy_1_1mc_1_1StoreReg_aff69b425e2c11643abfeaa10cd04f7c4}} 
+\index{sysy::mc::StoreReg@{sysy::mc::StoreReg}!type\_map@{type\_map}}
+\index{type\_map@{type\_map}!sysy::mc::StoreReg@{sysy::mc::StoreReg}}
+\doxysubsubsection{\texorpdfstring{type\_map}{type\_map}}
+{\footnotesize\ttfamily std\+::map$<$ Store\+Reg\+::\+Type, std\+::string $>$ sysy\+::mc\+::\+Store\+Reg\+::type\+\_\+map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{SSTORE, \textcolor{stringliteral}{"str"}\}, \{VSTORE, \textcolor{stringliteral}{"vstr"}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Target/Instruction.\+h\item 
+lib/\+Target/M\+C\+Instruction.\+cpp\end{DoxyCompactItemize}

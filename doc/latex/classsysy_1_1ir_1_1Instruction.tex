@@ -1,0 +1,138 @@
+\hypertarget{classsysy_1_1ir_1_1Instruction}{}\doxysection{sysy\+::ir\+::Instruction Class Reference}
+\label{classsysy_1_1ir_1_1Instruction}\index{sysy::ir::Instruction@{sysy::ir::Instruction}}
+
+
+Inheritance diagram for sysy\+::ir\+::Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsysy_1_1ir_1_1Instruction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::ir\+::Instruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classsysy_1_1ir_1_1Instruction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_acacb149c6d40059ab71e7fbf58fc7fa0}\label{classsysy_1_1ir_1_1Instruction_acacb149c6d40059ab71e7fbf58fc7fa0}} 
+enum {\bfseries Instr\+Kind} \{ \newline
+{\bfseries Add} = 0, 
+{\bfseries Sub}, 
+{\bfseries Mul}, 
+{\bfseries S\+Div}, 
+\newline
+{\bfseries S\+Rem}, 
+{\bfseries I\+Cmp\+EQ}, 
+{\bfseries I\+Cmp\+NE}, 
+{\bfseries I\+Cmp\+S\+LT}, 
+\newline
+{\bfseries I\+Cmp\+S\+GT}, 
+{\bfseries I\+Cmp\+S\+LE}, 
+{\bfseries I\+Cmp\+S\+GE}, 
+{\bfseries A\+Shr}, 
+\newline
+{\bfseries L\+Shr}, 
+{\bfseries Shl}, 
+{\bfseries F\+Add}, 
+{\bfseries F\+Sub}, 
+\newline
+{\bfseries F\+Mul}, 
+{\bfseries F\+Div}, 
+{\bfseries F\+Rem}, 
+{\bfseries F\+Cmp\+U\+EQ}, 
+\newline
+{\bfseries F\+Cmp\+U\+NE}, 
+{\bfseries F\+Cmp\+U\+LT}, 
+{\bfseries F\+Cmp\+U\+GT}, 
+{\bfseries F\+Cmp\+U\+LE}, 
+\newline
+{\bfseries F\+Cmp\+U\+GE}, 
+{\bfseries Neg}, 
+{\bfseries Not}, 
+{\bfseries F\+Neg}, 
+\newline
+{\bfseries F\+P\+To\+SI}, 
+{\bfseries S\+I\+To\+FP}, 
+{\bfseries Bit\+Cast}, 
+{\bfseries Cond\+Br}, 
+\newline
+{\bfseries Br}, 
+{\bfseries Call}, 
+{\bfseries Ret}, 
+{\bfseries Alloca}, 
+\newline
+{\bfseries Load}, 
+{\bfseries Store}, 
+{\bfseries Inbound\+G\+EP}, 
+{\bfseries Zext}, 
+\newline
+{\bfseries Phi}, 
+{\bfseries Mem\+Phi}, 
+{\bfseries Load\+Dep}, 
+{\bfseries Mem\+Copy}, 
+\newline
+{\bfseries Insert\+Ele}, 
+{\bfseries Extract\+Ele}, 
+{\bfseries Move}, 
+{\bfseries Dead}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a041c6109d378189216940a961bf45bb5}\label{classsysy_1_1ir_1_1Instruction_a041c6109d378189216940a961bf45bb5}} 
+{\bfseries Instruction} (\mbox{\hyperlink{classsysy_1_1ir_1_1Type}{Type}} $\ast$\+\_\+type, Instr\+Kind \+\_\+kind, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$\+\_\+father, std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1ir_1_1Value}{Value}} $\ast$ $>$ \+\_\+oprands, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a683a4aae4244f50b6e1083701b652539}\label{classsysy_1_1ir_1_1Instruction_a683a4aae4244f50b6e1083701b652539}} 
+{\bfseries Instruction} (\mbox{\hyperlink{classsysy_1_1ir_1_1Type}{Type}} $\ast$\+\_\+type, Instr\+Kind \+\_\+kind, \mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$\+\_\+father, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a1b75bf99f7751b0c76f15d94652ca176}\label{classsysy_1_1ir_1_1Instruction_a1b75bf99f7751b0c76f15d94652ca176}} 
+Instr\+Kind {\bfseries get\+Kind} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a08aa12d42fea429cbd94f8ca0a4afe79}\label{classsysy_1_1ir_1_1Instruction_a08aa12d42fea429cbd94f8ca0a4afe79}} 
+bool {\bfseries is\+Integer} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a1956d1838dfda8d21fec2c6405d9856f}\label{classsysy_1_1ir_1_1Instruction_a1956d1838dfda8d21fec2c6405d9856f}} 
+bool {\bfseries is\+Cmp} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a58339878755cc7edf5041fca90f9bd9b}\label{classsysy_1_1ir_1_1Instruction_a58339878755cc7edf5041fca90f9bd9b}} 
+bool {\bfseries is\+Terminator} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a3bc12d35df517c98fc48ef9c040a007e}\label{classsysy_1_1ir_1_1Instruction_a3bc12d35df517c98fc48ef9c040a007e}} 
+bool {\bfseries is\+Commutative} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_aade5575316fb35822e3785e543ecba69}\label{classsysy_1_1ir_1_1Instruction_aade5575316fb35822e3785e543ecba69}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$ {\bfseries get\+Basic\+Block} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_add97e4e3cfba3f720ba5d892135ea7b8}\label{classsysy_1_1ir_1_1Instruction_add97e4e3cfba3f720ba5d892135ea7b8}} 
+\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$ {\bfseries get\+Basic\+Block} () const
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a03508386f88a1697e942901f76300195}\label{classsysy_1_1ir_1_1Instruction_a03508386f88a1697e942901f76300195}} 
+void {\bfseries re\+Set\+Basic\+Block} (\mbox{\hyperlink{classsysy_1_1ir_1_1BasicBlock}{Basic\+Block}} $\ast$bb)
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a493f782da20b01120dd1a2fd8d370f7c}\label{classsysy_1_1ir_1_1Instruction_a493f782da20b01120dd1a2fd8d370f7c}} 
+int {\bfseries get\+Rank} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_abb68d63ec14b3d731300d57a824c2f05}\label{classsysy_1_1ir_1_1Instruction_abb68d63ec14b3d731300d57a824c2f05}} 
+virtual std\+::string {\bfseries get\+Signature} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1ir_1_1Instruction_a5166425ad6cbe9bdf20f203efe3ebd06}\label{classsysy_1_1ir_1_1Instruction_a5166425ad6cbe9bdf20f203efe3ebd06}} 
+static bool {\bfseries is\+Reverse} (\mbox{\hyperlink{classsysy_1_1ir_1_1Instruction}{Instruction}} $\ast$x, \mbox{\hyperlink{classsysy_1_1ir_1_1Instruction}{Instruction}} $\ast$y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+I\+R/Instruction.\+h\item 
+lib/\+I\+R/Instructions.\+cpp\end{DoxyCompactItemize}

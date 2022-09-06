@@ -1,0 +1,46 @@
+\hypertarget{classsysy_1_1Pass}{}\doxysection{sysy\+::Pass$<$ Opt $>$ Class Template Reference}
+\label{classsysy_1_1Pass}\index{sysy::Pass$<$ Opt $>$@{sysy::Pass$<$ Opt $>$}}
+
+
+Inheritance diagram for sysy\+::Pass$<$ Opt $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classsysy_1_1Pass__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1Pass_a876dcea0233148a62cff8008771a2a6a}\label{classsysy_1_1Pass_a876dcea0233148a62cff8008771a2a6a}} 
+using {\bfseries Dfs\+Func} = std\+::function$<$ void(\mbox{\hyperlink{classsysy_1_1Pass}{Pass}}$<$ Opt $>$ $\ast$)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1Pass_a1a239de32e6560d250de0c0c486215d2}\label{classsysy_1_1Pass_a1a239de32e6560d250de0c0c486215d2}} 
+virtual void {\bfseries run} (Opt opt)=0
+\item 
+\mbox{\Hypertarget{classsysy_1_1Pass_ab06bbe434deae382eb35a8ab2dea0e3c}\label{classsysy_1_1Pass_ab06bbe434deae382eb35a8ab2dea0e3c}} 
+virtual std\+::string {\bfseries get\+Name} ()=0
+\item 
+\mbox{\Hypertarget{classsysy_1_1Pass_a173295351670ccda8884f99ce538637c}\label{classsysy_1_1Pass_a173295351670ccda8884f99ce538637c}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1Pass}{Pass}}$<$ Opt $>$ $\ast$ $>$ \& {\bfseries get\+Related} ()
+\item 
+\mbox{\Hypertarget{classsysy_1_1Pass_a9fa8345efad5dc07e9106b89580cb976}\label{classsysy_1_1Pass_a9fa8345efad5dc07e9106b89580cb976}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1Pass}{Pass}}$<$ Opt $>$ $\ast$ $>$ \& {\bfseries get\+Finish} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1Pass_afbe59b0867e1cac38f46d977467515c6}\label{classsysy_1_1Pass_afbe59b0867e1cac38f46d977467515c6}} 
+static void {\bfseries related\+Dfs} (\mbox{\hyperlink{classsysy_1_1Pass}{Pass}}$<$ Opt $>$ $\ast$pass, Dfs\+Func func)
+\item 
+\mbox{\Hypertarget{classsysy_1_1Pass_ab6d56fe3ac425806457937d491d8b600}\label{classsysy_1_1Pass_ab6d56fe3ac425806457937d491d8b600}} 
+static void {\bfseries finish\+By\+Dfs} (\mbox{\hyperlink{classsysy_1_1Pass}{Pass}}$<$ Opt $>$ $\ast$pass, Dfs\+Func func)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+I\+R/Pass\+Manager.\+h\end{DoxyCompactItemize}

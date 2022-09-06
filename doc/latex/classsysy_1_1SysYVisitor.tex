@@ -1,0 +1,170 @@
+\hypertarget{classsysy_1_1SysYVisitor}{}\doxysection{sysy\+::Sys\+Y\+Visitor Class Reference}
+\label{classsysy_1_1SysYVisitor}\index{sysy::SysYVisitor@{sysy::SysYVisitor}}
+
+
+Inheritance diagram for sysy\+::Sys\+Y\+Visitor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classsysy_1_1SysYVisitor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sysy\+::Sys\+Y\+Visitor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classsysy_1_1SysYVisitor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_abbc45111a22b6ffabb1822a99e89e73f}\label{classsysy_1_1SysYVisitor_abbc45111a22b6ffabb1822a99e89e73f}} 
+{\bfseries Sys\+Y\+Visitor} (\mbox{\hyperlink{classSysYParser}{Sys\+Y\+Parser}} \&\+\_\+parser)
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ae107b1939564fa61de622a5172dbb10d}\label{classsysy_1_1SysYVisitor_ae107b1939564fa61de622a5172dbb10d}} 
+void {\bfseries print\+Cst} (antlr4\+::\+Parser\+Rule\+Context $\ast$ctx, int depth)
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a697a56a898cef6befe800814835303a9}\label{classsysy_1_1SysYVisitor_a697a56a898cef6befe800814835303a9}} 
+void {\bfseries print\+Src} (\mbox{\hyperlink{classSysYParser_1_1CompUnitContext}{Sys\+Y\+Parser\+::\+Comp\+Unit\+Context}} $\ast$ctx)
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ad8b1ecbdaf580bd1c058ff186a98b320}\label{classsysy_1_1SysYVisitor_ad8b1ecbdaf580bd1c058ff186a98b320}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1ast_1_1ExprNode}{ast\+::\+Expr\+Node}} $\ast$ $>$ {\bfseries const\+Init\+Val\+Dfs} (\mbox{\hyperlink{classSysYParser_1_1ConstInitValContext}{Sys\+Y\+Parser\+::\+Const\+Init\+Val\+Context}} $\ast$ctx, int idx)
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a5d740f74fc156b44c8a22bce62f04247}\label{classsysy_1_1SysYVisitor_a5d740f74fc156b44c8a22bce62f04247}} 
+std\+::vector$<$ \mbox{\hyperlink{classsysy_1_1ast_1_1ExprNode}{ast\+::\+Expr\+Node}} $\ast$ $>$ {\bfseries var\+Init\+Val\+Dfs} (\mbox{\hyperlink{classSysYParser_1_1InitValContext}{Sys\+Y\+Parser\+::\+Init\+Val\+Context}} $\ast$ctx, int idx)
+\item 
+antlrcpp\+::\+Any \mbox{\hyperlink{classsysy_1_1SysYVisitor_ab682df80318ab90e69717f49679210e6}{visit\+Comp\+Unit}} (\mbox{\hyperlink{classSysYParser_1_1CompUnitContext}{Sys\+Y\+Parser\+::\+Comp\+Unit\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_affbd74662ce97d820025873bf7947b11}\label{classsysy_1_1SysYVisitor_affbd74662ce97d820025873bf7947b11}} 
+antlrcpp\+::\+Any {\bfseries visit\+Element} (\mbox{\hyperlink{classSysYParser_1_1ElementContext}{Sys\+Y\+Parser\+::\+Element\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ac5fa6dafdb29de88f6ef968e358b876e}\label{classsysy_1_1SysYVisitor_ac5fa6dafdb29de88f6ef968e358b876e}} 
+antlrcpp\+::\+Any {\bfseries visit\+Decl} (\mbox{\hyperlink{classSysYParser_1_1DeclContext}{Sys\+Y\+Parser\+::\+Decl\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a80ec4261f16555c76ddbc39cff2a50de}\label{classsysy_1_1SysYVisitor_a80ec4261f16555c76ddbc39cff2a50de}} 
+antlrcpp\+::\+Any {\bfseries visit\+Const\+Decl} (\mbox{\hyperlink{classSysYParser_1_1ConstDeclContext}{Sys\+Y\+Parser\+::\+Const\+Decl\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a920043029462427e1d43a0210442b731}\label{classsysy_1_1SysYVisitor_a920043029462427e1d43a0210442b731}} 
+antlrcpp\+::\+Any {\bfseries visit\+B\+Type} (\mbox{\hyperlink{classSysYParser_1_1BTypeContext}{Sys\+Y\+Parser\+::\+B\+Type\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ae7f37c30fddd3017dfebff7dbe530786}\label{classsysy_1_1SysYVisitor_ae7f37c30fddd3017dfebff7dbe530786}} 
+antlrcpp\+::\+Any {\bfseries visit\+Const\+Def} (\mbox{\hyperlink{classSysYParser_1_1ConstDefContext}{Sys\+Y\+Parser\+::\+Const\+Def\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a711752d32c5501320259f596f897c379}\label{classsysy_1_1SysYVisitor_a711752d32c5501320259f596f897c379}} 
+antlrcpp\+::\+Any {\bfseries visit\+Const\+Init\+Val} (\mbox{\hyperlink{classSysYParser_1_1ConstInitValContext}{Sys\+Y\+Parser\+::\+Const\+Init\+Val\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a651b92df58c87f84fd15ecbb22bcb41e}\label{classsysy_1_1SysYVisitor_a651b92df58c87f84fd15ecbb22bcb41e}} 
+antlrcpp\+::\+Any {\bfseries visit\+Var\+Decl} (\mbox{\hyperlink{classSysYParser_1_1VarDeclContext}{Sys\+Y\+Parser\+::\+Var\+Decl\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ab138932ba802309d003adc305d6602aa}\label{classsysy_1_1SysYVisitor_ab138932ba802309d003adc305d6602aa}} 
+antlrcpp\+::\+Any {\bfseries visit\+Var\+Decl\+\_\+in} (\mbox{\hyperlink{classSysYParser_1_1VarDecl__inContext}{Sys\+Y\+Parser\+::\+Var\+Decl\+\_\+in\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_aee755b366a489b29192260d783e8ba53}\label{classsysy_1_1SysYVisitor_aee755b366a489b29192260d783e8ba53}} 
+antlrcpp\+::\+Any {\bfseries visit\+Var\+Def} (\mbox{\hyperlink{classSysYParser_1_1VarDefContext}{Sys\+Y\+Parser\+::\+Var\+Def\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_addbef964292993dd5fe6467f5f90ae92}\label{classsysy_1_1SysYVisitor_addbef964292993dd5fe6467f5f90ae92}} 
+antlrcpp\+::\+Any {\bfseries visit\+Init\+Val} (\mbox{\hyperlink{classSysYParser_1_1InitValContext}{Sys\+Y\+Parser\+::\+Init\+Val\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_aea896cd9b83005cc884a6539813c87ec}\label{classsysy_1_1SysYVisitor_aea896cd9b83005cc884a6539813c87ec}} 
+antlrcpp\+::\+Any {\bfseries visit\+Func\+Def} (\mbox{\hyperlink{classSysYParser_1_1FuncDefContext}{Sys\+Y\+Parser\+::\+Func\+Def\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a847abe2a98abb1765d4cdfcad75e04ae}\label{classsysy_1_1SysYVisitor_a847abe2a98abb1765d4cdfcad75e04ae}} 
+antlrcpp\+::\+Any {\bfseries visit\+Func\+Type} (\mbox{\hyperlink{classSysYParser_1_1FuncTypeContext}{Sys\+Y\+Parser\+::\+Func\+Type\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a105ac08a6fb4d69fc1fe4b58dca2957a}\label{classsysy_1_1SysYVisitor_a105ac08a6fb4d69fc1fe4b58dca2957a}} 
+antlrcpp\+::\+Any {\bfseries visit\+Func\+F\+Params} (\mbox{\hyperlink{classSysYParser_1_1FuncFParamsContext}{Sys\+Y\+Parser\+::\+Func\+F\+Params\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_afd82de5ec0ccad2cdc27f53e035f358e}\label{classsysy_1_1SysYVisitor_afd82de5ec0ccad2cdc27f53e035f358e}} 
+antlrcpp\+::\+Any {\bfseries visit\+Func\+F\+Param} (\mbox{\hyperlink{classSysYParser_1_1FuncFParamContext}{Sys\+Y\+Parser\+::\+Func\+F\+Param\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ac3d4c05873d507b6a0e62eb4d6795f3e}\label{classsysy_1_1SysYVisitor_ac3d4c05873d507b6a0e62eb4d6795f3e}} 
+antlrcpp\+::\+Any {\bfseries visit\+Block} (\mbox{\hyperlink{classSysYParser_1_1BlockContext}{Sys\+Y\+Parser\+::\+Block\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_acbe37d4ff0a0bceacbccfdeb38e56c3a}\label{classsysy_1_1SysYVisitor_acbe37d4ff0a0bceacbccfdeb38e56c3a}} 
+antlrcpp\+::\+Any {\bfseries visit\+Block\+Item} (\mbox{\hyperlink{classSysYParser_1_1BlockItemContext}{Sys\+Y\+Parser\+::\+Block\+Item\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ac9ded31e4aebe1312c628c6f76ab82a8}\label{classsysy_1_1SysYVisitor_ac9ded31e4aebe1312c628c6f76ab82a8}} 
+antlrcpp\+::\+Any {\bfseries visit\+Stmt\+\_\+in} (\mbox{\hyperlink{classSysYParser_1_1Stmt__inContext}{Sys\+Y\+Parser\+::\+Stmt\+\_\+in\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a9320583147da851f48c67a68edcb39ae}\label{classsysy_1_1SysYVisitor_a9320583147da851f48c67a68edcb39ae}} 
+antlrcpp\+::\+Any {\bfseries visit\+Stmt} (\mbox{\hyperlink{classSysYParser_1_1StmtContext}{Sys\+Y\+Parser\+::\+Stmt\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a295114a7f3c42da61e9967a3944a3a09}\label{classsysy_1_1SysYVisitor_a295114a7f3c42da61e9967a3944a3a09}} 
+antlrcpp\+::\+Any {\bfseries visit\+Exp} (\mbox{\hyperlink{classSysYParser_1_1ExpContext}{Sys\+Y\+Parser\+::\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_af556f266a6c1e1267b64033ca5571d2c}\label{classsysy_1_1SysYVisitor_af556f266a6c1e1267b64033ca5571d2c}} 
+antlrcpp\+::\+Any {\bfseries visit\+Cond} (\mbox{\hyperlink{classSysYParser_1_1CondContext}{Sys\+Y\+Parser\+::\+Cond\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a6116c0b5024f18a5e1dea8a19cf0e121}\label{classsysy_1_1SysYVisitor_a6116c0b5024f18a5e1dea8a19cf0e121}} 
+antlrcpp\+::\+Any {\bfseries visit\+L\+Val} (\mbox{\hyperlink{classSysYParser_1_1LValContext}{Sys\+Y\+Parser\+::\+L\+Val\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a1fd1c51cf1352998a1b8ce53fca2c737}\label{classsysy_1_1SysYVisitor_a1fd1c51cf1352998a1b8ce53fca2c737}} 
+antlrcpp\+::\+Any {\bfseries visit\+Primary\+Exp} (\mbox{\hyperlink{classSysYParser_1_1PrimaryExpContext}{Sys\+Y\+Parser\+::\+Primary\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_acfafaa7b6036c262d6c4008d8b709a0f}\label{classsysy_1_1SysYVisitor_acfafaa7b6036c262d6c4008d8b709a0f}} 
+antlrcpp\+::\+Any {\bfseries visit\+Number} (\mbox{\hyperlink{classSysYParser_1_1NumberContext}{Sys\+Y\+Parser\+::\+Number\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a46f488da44a7c5500745e2f98a41ed71}\label{classsysy_1_1SysYVisitor_a46f488da44a7c5500745e2f98a41ed71}} 
+antlrcpp\+::\+Any {\bfseries visit\+Unary\+Exp} (\mbox{\hyperlink{classSysYParser_1_1UnaryExpContext}{Sys\+Y\+Parser\+::\+Unary\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ac8bded51fe61313737b5c09cb3586fc2}\label{classsysy_1_1SysYVisitor_ac8bded51fe61313737b5c09cb3586fc2}} 
+antlrcpp\+::\+Any {\bfseries visit\+Unary\+Op} (\mbox{\hyperlink{classSysYParser_1_1UnaryOpContext}{Sys\+Y\+Parser\+::\+Unary\+Op\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_aed3f582822054f482e78ef3dd9981d70}\label{classsysy_1_1SysYVisitor_aed3f582822054f482e78ef3dd9981d70}} 
+antlrcpp\+::\+Any {\bfseries visit\+Func\+R\+Params} (\mbox{\hyperlink{classSysYParser_1_1FuncRParamsContext}{Sys\+Y\+Parser\+::\+Func\+R\+Params\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a213c7c1d66cfc2ef99be4631ecbda48a}\label{classsysy_1_1SysYVisitor_a213c7c1d66cfc2ef99be4631ecbda48a}} 
+antlrcpp\+::\+Any {\bfseries visit\+Mul\+Exp} (\mbox{\hyperlink{classSysYParser_1_1MulExpContext}{Sys\+Y\+Parser\+::\+Mul\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a2f73904280bb61b256df1f84a024fd28}\label{classsysy_1_1SysYVisitor_a2f73904280bb61b256df1f84a024fd28}} 
+antlrcpp\+::\+Any {\bfseries visit\+Add\+Exp} (\mbox{\hyperlink{classSysYParser_1_1AddExpContext}{Sys\+Y\+Parser\+::\+Add\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a6c84214c7270e770db1083b15c51aefc}\label{classsysy_1_1SysYVisitor_a6c84214c7270e770db1083b15c51aefc}} 
+antlrcpp\+::\+Any {\bfseries visit\+Rel\+Exp} (\mbox{\hyperlink{classSysYParser_1_1RelExpContext}{Sys\+Y\+Parser\+::\+Rel\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a8c096e39c889614d13d3d0d3f95a3900}\label{classsysy_1_1SysYVisitor_a8c096e39c889614d13d3d0d3f95a3900}} 
+antlrcpp\+::\+Any {\bfseries visit\+Eq\+Exp} (\mbox{\hyperlink{classSysYParser_1_1EqExpContext}{Sys\+Y\+Parser\+::\+Eq\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_abf9cbcac373474b69a961c6c57be5327}\label{classsysy_1_1SysYVisitor_abf9cbcac373474b69a961c6c57be5327}} 
+antlrcpp\+::\+Any {\bfseries visit\+L\+And\+Exp} (\mbox{\hyperlink{classSysYParser_1_1LAndExpContext}{Sys\+Y\+Parser\+::\+L\+And\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_aaf531ed66ed9bf56764ef98eedc6c888}\label{classsysy_1_1SysYVisitor_aaf531ed66ed9bf56764ef98eedc6c888}} 
+antlrcpp\+::\+Any {\bfseries visit\+L\+Or\+Exp} (\mbox{\hyperlink{classSysYParser_1_1LOrExpContext}{Sys\+Y\+Parser\+::\+L\+Or\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_afb33c1a28d2b1821a845386422121e39}\label{classsysy_1_1SysYVisitor_afb33c1a28d2b1821a845386422121e39}} 
+antlrcpp\+::\+Any {\bfseries visit\+Const\+Exp} (\mbox{\hyperlink{classSysYParser_1_1ConstExpContext}{Sys\+Y\+Parser\+::\+Const\+Exp\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ab85fb7eaba73b5956fe48eeb10092737}\label{classsysy_1_1SysYVisitor_ab85fb7eaba73b5956fe48eeb10092737}} 
+antlrcpp\+::\+Any {\bfseries visit\+Int\+Const} (\mbox{\hyperlink{classSysYParser_1_1IntConstContext}{Sys\+Y\+Parser\+::\+Int\+Const\+Context}} $\ast$ctx) override
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a897bac5edd1dc700e8394397f90d0a3b}\label{classsysy_1_1SysYVisitor_a897bac5edd1dc700e8394397f90d0a3b}} 
+antlrcpp\+::\+Any {\bfseries visit\+Float\+Const} (\mbox{\hyperlink{classSysYParser_1_1FloatConstContext}{Sys\+Y\+Parser\+::\+Float\+Const\+Context}} $\ast$ctx) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_a2549443095e37f26f51a97ace11a3185}\label{classsysy_1_1SysYVisitor_a2549443095e37f26f51a97ace11a3185}} 
+\mbox{\hyperlink{classSysYParser}{Sys\+Y\+Parser}} \& {\bfseries parser}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsysy_1_1SysYVisitor_ab682df80318ab90e69717f49679210e6}\label{classsysy_1_1SysYVisitor_ab682df80318ab90e69717f49679210e6}} 
+\index{sysy::SysYVisitor@{sysy::SysYVisitor}!visitCompUnit@{visitCompUnit}}
+\index{visitCompUnit@{visitCompUnit}!sysy::SysYVisitor@{sysy::SysYVisitor}}
+\doxysubsubsection{\texorpdfstring{visitCompUnit()}{visitCompUnit()}}
+{\footnotesize\ttfamily antlrcpp\+::\+Any sysy\+::\+Sys\+Y\+Visitor\+::visit\+Comp\+Unit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSysYParser_1_1CompUnitContext}{Sys\+Y\+Parser\+::\+Comp\+Unit\+Context}} $\ast$}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visit parse trees produced by \mbox{\hyperlink{classSysYParser}{Sys\+Y\+Parser}}. 
+
+Reimplemented from \mbox{\hyperlink{classSysYParserBaseVisitor_a21d12c2fa10259c84968bf09900362ad}{Sys\+Y\+Parser\+Base\+Visitor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/sysy/\+Frontend/Sys\+Y\+Visitor.\+h\item 
+lib/\+Frontend/Sys\+Y\+Visitor.\+cpp\end{DoxyCompactItemize}
