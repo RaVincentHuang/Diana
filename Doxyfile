@@ -859,6 +859,7 @@ INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
                          *.cpp \
                          *.h \
+                         *.md
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -975,7 +976,7 @@ FILTER_SOURCE_FILES    = NO
 # *.ext= (so without naming a filter).
 # This tag requires that the tag FILTER_SOURCE_FILES is set to YES.
 
-FILTER_SOURCE_PATTERNS =
+FILTER_SOURCE_PATTERNS = 
 
 # If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
 # is part of the input, its contents will be placed on the main page
