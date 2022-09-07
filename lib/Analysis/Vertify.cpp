@@ -1,5 +1,5 @@
 #include "sysy/Analysis/Vertify.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include "sysy/IR/BasicBlock.h"
 #include "sysy/IR/Instructions.h"
 #include "sysy/IR/Function.h"

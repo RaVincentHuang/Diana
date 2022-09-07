@@ -1,9 +1,0 @@
-<map id="sysy::ir::TerminatorInstruction" name="sysy::ir::TerminatorInstruction">
-<area shape="rect" id="node1" title=" " alt="" coords="167,229,381,256"/>
-<area shape="rect" id="node5" href="$classsysy_1_1ir_1_1BrInstruction.html" title=" " alt="" coords="5,304,164,331"/>
-<area shape="rect" id="node6" href="$classsysy_1_1ir_1_1CallInstruction.html" title=" " alt="" coords="189,304,359,331"/>
-<area shape="rect" id="node7" href="$classsysy_1_1ir_1_1RetInstruction.html" title=" " alt="" coords="384,304,551,331"/>
-<area shape="rect" id="node2" href="$classsysy_1_1ir_1_1Instruction.html" title=" " alt="" coords="201,155,347,181"/>
-<area shape="rect" id="node3" href="$classsysy_1_1ir_1_1User.html" title=" " alt="" coords="221,80,327,107"/>
-<area shape="rect" id="node4" href="$classsysy_1_1ir_1_1Value.html" title=" " alt="" coords="218,5,330,32"/>
-</map>

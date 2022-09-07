@@ -1,4 +1,4 @@
-//===-------------------AstDump.h - The dumper of Ast ---*- C++ -*---------===//
+//===------ TypeUtils.h - IR type system helper functions-*- C++ -*--------===//
 //
 // Part of the Diana, a SysY Compiler, under the MIT License.
 // See https://github.com/RaVincentHuang/Diana/blob/master/LICENSE for license 
@@ -12,24 +12,32 @@
 /// base class for all of the VM instructions.
 ///
 //===----------------------------------------------------------------------===//
-#ifndef SYSY_ASTDUMP_H
-#define SYSY_ASTDUMP_H
 
-#include "sysy/Frontend/Ast.h"
+#ifndef SYSY_TYPE_UTILS_H
+#define SYSY_TYPE_UTILS_H
+#include "sysy/Frontend/AstType.h"
+#include "sysy/IR/Type.h"
+
 
 namespace sysy
 {
+
 namespace ast
 {
+
+ir::Type* AstType2IrType(AstType type);
+
+
+} // namespace ast
+
+namespace ir
+{
     
-void dump(AstNode* node);
-    
-} // namespace ast  
+bool isSameType(ir::Type* type1, ir::Type* type2);
+
+} // namespace ir
+
+
 } // namespace sysy
-
-
-
-
-
 
 #endif

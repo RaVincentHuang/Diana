@@ -1,7 +1,0 @@
-<map id="sysy::ir::MemoryInstruction" name="sysy::ir::MemoryInstruction">
-<area shape="rect" id="node1" title=" " alt="" coords="5,323,204,349"/>
-<area shape="rect" id="node2" href="$classsysy_1_1ir_1_1Instruction.html" title=" " alt="" coords="32,247,177,273"/>
-<area shape="rect" id="node3" href="$classsysy_1_1ir_1_1User.html" title=" " alt="" coords="51,171,158,197"/>
-<area shape="rect" id="node4" href="$classsysy_1_1ir_1_1Value.html" title=" " alt="" coords="49,95,161,121"/>
-<area shape="rect" id="node5" href="$classsysy_1_1ir_1_1Type.html" title=" " alt="" coords="51,5,158,32"/>
-</map>

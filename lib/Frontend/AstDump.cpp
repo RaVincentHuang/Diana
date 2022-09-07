@@ -1,6 +1,6 @@
 #include "sysy/Frontend/AstDump.h"
 #include "sysy/Frontend/AstType.h"
-#include "sysy/Support/strUtils.h"
+#include "sysy/Support/StrUtils.h"
 #include <iostream>
 
 namespace sysy
@@ -76,7 +76,7 @@ std::string getSignature(UnaryOp op)
 std::string CompUnitNode::getSignature() const 
 {
     std::string signature = "compUnit: ";
-    for(auto iter : element)
+    for(auto& iter : element)
         signature += subLine(iter->getSignature());
     // for(auto iter : funcDef)
     //     signature += subLine(iter->getSignature());
@@ -98,7 +98,7 @@ std::string FuncDefNode::getSignature() const
 std::string FuncParamListNode::getSignature() const 
 {
     std::string signature = "funcParams: ";
-    for(auto iter : funcParam)
+    for(auto& iter : funcParam)
         signature += subLine(iter->getSignature());
     return signature;
     
@@ -121,7 +121,7 @@ std::string DeclNode::getSignature() const
 std::string ConstDeclNode::getSignature() const 
 {
     std::string signature = "constDecl: " + ast::getSignature(type);
-    for(auto iter : constDef)
+    for(auto& iter : constDef)
         signature += subLine(iter->getSignature());
     return signature;
 }
@@ -129,7 +129,7 @@ std::string ConstDeclNode::getSignature() const
 std::string VarDeclNode::getSignature() const 
 {
     std::string signature = "constDecl: " + ast::getSignature(type);
-    for(auto iter : varDef)
+    for(auto& iter : varDef)
         signature += subLine(iter->getSignature());
     return signature;
 }
@@ -157,7 +157,7 @@ std::string VarDefNode::getSignature() const
 std::string InitValNode::getSignature() const 
 {
     std::string signature = "initVal: ";
-    for(auto iter : initItem)
+    for(auto& iter : initItem)
         signature += subLine(iter->getSignature());
     return signature;
 }
@@ -232,15 +232,15 @@ std::string ReturnStmtNode::getSignature() const
     return signature;
 }
 
-std::string PrototypeNode::getSignature() const 
-{
-    return "";
-}
+// std::string PrototypeNode::getSignature() const 
+// {
+//     return "";
+// }
 
 std::string BlockNode::getSignature() const 
 {
     std::string signature = "blockStmt: ";
-    for(auto iter : blockItems)
+    for(auto& iter : blockItems)
         signature += subLine(iter->getSignature());
     return signature;
 }
@@ -271,7 +271,7 @@ std::string FunctionCallExprNode::getSignature() const
     std::string signature = "functionCall: <" + ast::getSignature(type) + "> " + funcName + " (";
     if(!this->format.empty())
         signature += subLine(format);
-    for(auto iter : funcParamList)
+    for(auto& iter : funcParamList)
         signature += subLine(iter->getSignature());
     signature += ")";
     return signature;
@@ -282,7 +282,7 @@ std::string LvalNode::getSignature() const
     std::string signature = "lval: <" + ast::getSignature(type) + "> " + variable;
     // for(auto iter : dimSize)
     //     signature += "[" + std::to_string(iter) + "]";
-    for(auto iter : indexExpr)
+    for(auto& iter : indexExpr)
         signature += subLine("[" + iter->getSignature() + "]");
     return signature;
 }

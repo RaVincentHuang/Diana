@@ -1,3 +1,17 @@
+//===------------SysYVisitor.h - Visitor to Build Ast -*- C++ -*-----------===//
+//
+// Part of the Diana, a SysY Compiler, under the MIT License.
+// See https://github.com/RaVincentHuang/Diana/blob/master/LICENSE for license 
+// information.
+// SPDX-License-Identifier: MIT License.
+//
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// This file contains the declaration of the Instruction class, which is the
+/// base class for all of the VM instructions.
+///
+//===----------------------------------------------------------------------===//
 #ifndef SYSY_SYSYVISITOR_H
 #define SYSY_SYSYVISITOR_H
 
@@ -8,6 +22,7 @@
 namespace sysy
 {
 
+using ast::ExprNode;
 class SysYVisitor : public SysYParserBaseVisitor
 {
 protected:
@@ -21,9 +36,9 @@ public:
 
     void printSrc(SysYParser::CompUnitContext* ctx);
 
-    std::vector<ast::ExprNode*> constInitValDfs(SysYParser::ConstInitValContext *ctx, int idx);
+    std::vector<std::unique_ptr<ExprNode>> constInitValDfs(SysYParser::ConstInitValContext *ctx, int idx);
 
-    std::vector<ast::ExprNode*> varInitValDfs(SysYParser::InitValContext *ctx, int idx);
+    std::vector<std::unique_ptr<ExprNode>> varInitValDfs(SysYParser::InitValContext *ctx, int idx);
     
     antlrcpp::Any visitCompUnit(SysYParser::CompUnitContext *ctx) override;
 

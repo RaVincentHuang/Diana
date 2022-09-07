@@ -1,7 +1,7 @@
 #ifndef SYSY_IR_USER_H
 #define SYSY_IR_USER_H
 
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include "sysy/IR/Value.h"
 #include "sysy/IR/Use.h"
 #include <list>

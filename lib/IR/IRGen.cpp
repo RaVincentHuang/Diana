@@ -6,8 +6,8 @@
 #include "sysy/IR/Module.h"
 #include "sysy/IR/IRDump.h"
 #include "sysy/Transform/Utils/SimplifyCFG.h"
-#include "sysy/Support/typeUtils.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/TypeUtils.h"
+#include "sysy/Support/Debug.h"
 
 namespace sysy
 {
@@ -74,7 +74,7 @@ void getIDX(int index, const std::vector<int>& dims, std::vector<Value*>& IDX)
     }
 }
 
-void emitInitial(Value* gpr, std::vector<ExprNode*> initial, ArrayType* type)
+void emitInitial(Value* gpr, std::vector<std::unique_ptr<ExprNode>>& initial, ArrayType* type)
 {
     std::vector<int> dims;
     Type* _type = type;
@@ -88,25 +88,6 @@ void emitInitial(Value* gpr, std::vector<ExprNode*> initial, ArrayType* type)
     
     if(initial.empty())
     {
-        // if(type->getAllocatedSize() < 160)
-        // {
-        //     int num = type->getAllocatedSize() / 4;
-        //     for(int index = 0; index < num; index++)
-        //     {
-        //         std::vector<Value*> IDX;
-        //         getIDX(index, dims, IDX);
-        //         Value* val;
-        //         if(val->getType()->isIntegerTy())
-        //             val = ConstantInt::getZero(Type::getInt32Ty());
-        //         else 
-        //             val = ConstantFP::getZero();
-
-        //         Value* _gpr = Builder.CreateInBoundsGEP(gpr->getType()->getInnerType(), 
-        //                                 gpr, IDX, "initial");
-        //         Builder.CreateStore(val, _gpr);
-        //     }
-        //     return;
-        // }
         std::vector<Value*> IDX;
         IDX.push_back(ConstantInt::get(32, 0));
         for(auto i = 0; i < cnt; i++)
@@ -124,7 +105,7 @@ void emitInitial(Value* gpr, std::vector<ExprNode*> initial, ArrayType* type)
     {
         std::vector<Value*> IDX;
         getIDX(index, dims, IDX);
-        Value* val = irEmit(initial.at(index));
+        Value* val = irEmit(initial.at(index).get());
         Value* _gpr = Builder.CreateInBoundsGEP(gpr->getType()->getInnerType(), 
                                 gpr, IDX, "initial");
         if(!isSameType(val->getType(), _type))
@@ -151,7 +132,7 @@ Function* createGlobalInit()
     return F;
 }
 
-Function* createGlobalInit(GlobalValue* G, std::vector<ExprNode*> initial)
+Function* createGlobalInit(GlobalValue* G, std::vector<std::unique_ptr<ExprNode>>& initial)
 {
     FunctionType* FT = FunctionType::get(Type::getVoidTy(), {}, false);
 
@@ -166,7 +147,7 @@ Function* createGlobalInit(GlobalValue* G, std::vector<ExprNode*> initial)
             { ConstantInt::get(Type::getInt32Ty(), 0) }, "gpr");
     if(!G->getValueType()->isArrayTy())
     {
-        Value* val = irEmit(*initial.begin());
+        Value* val = irEmit((*initial.begin()).get());
         if(!isSameType(val->getType(), G->getValueType()))
         {
             if(val->getType()->isIntegerTy())
@@ -182,14 +163,14 @@ Function* createGlobalInit(GlobalValue* G, std::vector<ExprNode*> initial)
     return F;
 }
 
-static Value* getElementPtr(AllocaInstruction* A, std::vector<ExprNode*> expr)
+static Value* getElementPtr(AllocaInstruction* A, std::vector<std::unique_ptr<ExprNode>>& expr)
 {
     // auto iter = expr.begin();
     std::vector<Value*> IDX;
     IDX.push_back(ConstantInt::get(Type::getInt32Ty(), 0));
-    for(auto idx : expr)
+    for(auto& idx : expr)
     {
-        auto val = irEmit(idx);
+        auto val = irEmit(idx.get());
         if(val->getType()->isFloatTy())
             val = Builder.CreateFPToSI(val, Type::getInt32Ty(), "float2int");
         IDX.push_back(val);
@@ -208,13 +189,13 @@ static Value* getElementPtr(AllocaInstruction* A, std::vector<ExprNode*> expr)
     return addr;
 }
 
-static Value* getPtrPtr(AllocaInstruction* A, std::vector<ExprNode*> expr)
+static Value* getPtrPtr(AllocaInstruction* A, std::vector<std::unique_ptr<ExprNode>>& expr)
 {
     Value* array = Builder.CreateLoad(A->getAllocatedType(), A, "array.cpy");
     std::vector<Value*> IDX;
-    for(auto idx : expr)
+    for(auto& idx : expr)
     {
-        auto val = irEmit(idx);
+        auto val = irEmit(idx.get());
         if(val->getType()->isFloatTy())
             val = Builder.CreateFPToSI(val, Type::getInt32Ty(), "float2int");
         IDX.push_back(val);
@@ -224,13 +205,13 @@ static Value* getPtrPtr(AllocaInstruction* A, std::vector<ExprNode*> expr)
     return addr;
 }
 
-static Value* getElementPtr(GlobalValue* G, std::vector<ExprNode*> expr)
+static Value* getElementPtr(GlobalValue* G, std::vector<std::unique_ptr<ExprNode>>& expr)
 {
     std::vector<Value*> IDX;
     IDX.push_back(ConstantInt::get(Type::getInt32Ty(), 0));
-    for(auto idx : expr)
+    for(auto& idx : expr)
     {
-        auto val = irEmit(idx);
+        auto val = irEmit(idx.get());
         if(val->getType()->isFloatTy())
             val = Builder.CreateFPToSI(val, Type::getInt32Ty(), "float2int");
         IDX.push_back(val);
@@ -345,7 +326,7 @@ Value* irEmit(BinaryExprNode* binExpr)
             BasicBlock* trueBlock = BasicBlockTarget::getInstance().getTrue();
 
             BasicBlockTarget::getInstance().setFalse(still);
-            lhs = irEmit(binExpr->lhs);
+            lhs = irEmit(binExpr->lhs.get());
             BasicBlockTarget::getInstance().exitFalse();
 
             if(lhs->getType()->isFloatTy())
@@ -361,7 +342,7 @@ Value* irEmit(BinaryExprNode* binExpr)
             BasicBlock* falseBlock = BasicBlockTarget::getInstance().getFalse();
 
             BasicBlockTarget::getInstance().setTrue(still);
-            lhs = irEmit(binExpr->lhs);
+            lhs = irEmit(binExpr->lhs.get());
             BasicBlockTarget::getInstance().exitTrue();
 
             if(lhs->getType()->isFloatTy())
@@ -374,8 +355,8 @@ Value* irEmit(BinaryExprNode* binExpr)
         }
     }
     if(!lhs)
-        lhs = irEmit(binExpr->lhs);
-    Value* rhs = irEmit(binExpr->rhs);
+        lhs = irEmit(binExpr->lhs.get());
+    Value* rhs = irEmit(binExpr->rhs.get());
     if(binExpr->type == INT)
     {
         if(lhs->getType()->isFloatTy())
@@ -473,9 +454,9 @@ Value* irEmit(FunctionCallExprNode* funcCall)
         args.push_back(str);
     }
     int idx = 0;
-    for(auto iter : funcCall->funcParamList)
+    for(auto& iter : funcCall->funcParamList)
     {
-        Value* arg = irEmit(iter);
+        Value* arg = irEmit(iter.get());
 
         if(arg->getType()->isIntegerTy() && func->getArgs().at(idx)->getType()->isFloatTy())
             arg = Builder.CreateSIToFP(arg, Type::getFloatTy(), "int2float");
@@ -503,7 +484,7 @@ Value* irEmit(FunctionCallExprNode* funcCall)
 
 Value* irEmit(UnaryExprNode* unaryExpr)
 {
-    Value* expr = irEmit(unaryExpr->expr);
+    Value* expr = irEmit(unaryExpr->expr.get());
     if(unaryExpr->type == INT)
         switch (unaryExpr->op)
         {
@@ -559,8 +540,8 @@ Value* irEmit(BlockNode* block)
     auto& scope = ValueScope::getCurrentPtr();
     scope = scope->createChild();
     Value* end = nullptr;
-    for(auto item : block->blockItems)
-        end = irEmit(item);
+    for(auto& item : block->blockItems)
+        end = irEmit(item.get());
     scope = ValueScope::exitBlock(scope);
     return end;
 }
@@ -569,7 +550,7 @@ Function* irEmit(FuncDefNode* funcDef)
 {
     std::vector<Type*> argType;
     if(funcDef->funcParamList)
-        for(auto arg : funcDef->funcParamList->funcParam)
+        for(auto& arg : funcDef->funcParamList->funcParam)
             if(arg->type == INT)
             {
                 if(arg->dimSize.empty())
@@ -626,7 +607,7 @@ Function* irEmit(FuncDefNode* funcDef)
         Builder.CreateStore(arg.get(), alloca);
         scope->insertAlloca(arg->getName(), alloca);
     }
-    Value* ret = irEmit(funcDef->block);
+    Value* ret = irEmit(funcDef->block.get());
 
     if(FT->getRet()->isIntegerTy())
         Builder.CreateRet(ConstantInt::get(32, 0));
@@ -650,7 +631,7 @@ Value* irEmit(IfStmtNode* ifStmt)
         BasicBlock* nextBlock = BasicBlock::Create("ifnext");
 
         BasicBlockTarget::getInstance().setCond(thenBlock, elseBlock);
-        Value* cond = irEmit(ifStmt->cond);
+        Value* cond = irEmit(ifStmt->cond.get());
         BasicBlockTarget::getInstance().exitCond();
         if(cond->getType()->isFloatTy())
             cond = Builder.CreateFCmpUNE(cond, ConstantFP::get(0.0f), "ifcond");
@@ -660,14 +641,14 @@ Value* irEmit(IfStmtNode* ifStmt)
         Builder.CreateCondBr(cond, thenBlock, elseBlock);
 
         Builder.SetInsertPoint(thenBlock);
-        Value* then = irEmit(ifStmt->thenBlock);
+        Value* then = irEmit(ifStmt->thenBlock.get());
         
         Builder.CreateBr(nextBlock);
 
         theFunc->getBasicBlockList().push_back(elseBlock);
         elseBlock->setParent(theFunc);
         Builder.SetInsertPoint(elseBlock);
-        Value* _else = irEmit(ifStmt->elseBlock);
+        Value* _else = irEmit(ifStmt->elseBlock.get());
         
         Builder.CreateBr(nextBlock);
 
@@ -681,7 +662,7 @@ Value* irEmit(IfStmtNode* ifStmt)
         BasicBlock* nextBlock = BasicBlock::Create("ifnext");
 
         BasicBlockTarget::getInstance().setCond(thenBlock, nextBlock);
-        Value* cond = irEmit(ifStmt->cond);
+        Value* cond = irEmit(ifStmt->cond.get());
         BasicBlockTarget::getInstance().exitCond();
         if(cond->getType()->isFloatTy())
             cond = Builder.CreateFCmpUNE(cond, ConstantFP::get(0.0f), "ifcond");
@@ -696,7 +677,7 @@ Value* irEmit(IfStmtNode* ifStmt)
         Builder.CreateCondBr(cond, thenBlock, nextBlock);
 
         Builder.SetInsertPoint(thenBlock);
-        Value* then = irEmit(ifStmt->thenBlock);
+        Value* then = irEmit(ifStmt->thenBlock.get());
         
         Builder.CreateBr(nextBlock);
 
@@ -708,7 +689,7 @@ Value* irEmit(IfStmtNode* ifStmt)
     {
         BasicBlock* nextBlock = BasicBlock::Create("ifnext", theFunc);
         BasicBlockTarget::getInstance().setCond(nextBlock, nextBlock);
-        Value* cond = irEmit(ifStmt->cond);
+        Value* cond = irEmit(ifStmt->cond.get());
         BasicBlockTarget::getInstance().exitCond();
         
         Builder.CreateBr(nextBlock);
@@ -720,7 +701,7 @@ Value* irEmit(IfStmtNode* ifStmt)
 
 Value* irEmit(AssignStmtNode* assignStmt)
 {
-    Value* val = irEmit(assignStmt->expr);
+    Value* val = irEmit(assignStmt->expr.get());
     if(assignStmt->lval->type == INT && assignStmt->expr->type == FLOAT)
         val = Builder.CreateFPToSI(val, IntegerType::getInt32Ty(), "float2int");
     else if (assignStmt->lval->type == FLOAT && assignStmt->expr->type == INT)
@@ -746,23 +727,23 @@ Value* irEmit(AssignStmtNode* assignStmt)
 
 Value* irEmit(ExprStmtNode* exprStmt)
 {
-    return irEmit(exprStmt->expr);
+    return irEmit(exprStmt->expr.get());
 }
 
 // FIXME for loop can not decl var at the start.
 Value* irEmit(ForStmtNode* forStmt)
 {
     Function* theFunc = Builder.GetInsertBlock()->getParent();
-    Value* init = irEmit(forStmt->initial);
+    Value* init = irEmit(forStmt->initial.get());
     BasicBlock* loop = BasicBlock::Create("forloop", theFunc);
     BasicBlock* after = BasicBlock::Create("afterloop");
     BasicBlockTarget::getInstance().setLoop(loop, after);
     Builder.CreateBr(loop);
 
     Builder.SetInsertPoint(loop);
-    Value* end = irEmit(forStmt->stmt);
-    Value* incr = irEmit(forStmt->increment);
-    Value* cond = irEmit(forStmt->cond);
+    Value* end = irEmit(forStmt->stmt.get());
+    Value* incr = irEmit(forStmt->increment.get());
+    Value* cond = irEmit(forStmt->cond.get());
     if(cond->getType() == Type::getInt32Ty())
         cond = Builder.CreateICmpNE(cond, ConstantInt::get(Type::getInt32Ty(), 0), "cond");
     else
@@ -786,7 +767,7 @@ Value* irEmit(WhileStmtNode* whileStmt)
         Builder.CreateBr(guard);
         Builder.SetInsertPoint(guard);
         BasicBlockTarget::getInstance().setCond(guard, exit);
-        Value* cond = irEmit(whileStmt->cond);
+        Value* cond = irEmit(whileStmt->cond.get());
         BasicBlockTarget::getInstance().exitCond();
         if(cond->getType() == Type::getInt32Ty())
             cond = Builder.CreateICmpNE(cond, ConstantInt::get(Type::getInt32Ty(), 0), "cond");
@@ -806,7 +787,7 @@ Value* irEmit(WhileStmtNode* whileStmt)
 
     Builder.SetInsertPoint(guard);
     BasicBlockTarget::getInstance().setCond(preHead, exit);
-    Value* cond = irEmit(whileStmt->cond);
+    Value* cond = irEmit(whileStmt->cond.get());
     BasicBlockTarget::getInstance().exitCond();
     if(cond->getType() == Type::getInt32Ty())
         cond = Builder.CreateICmpNE(cond, ConstantInt::get(Type::getInt32Ty(), 0), "cond");
@@ -822,14 +803,14 @@ Value* irEmit(WhileStmtNode* whileStmt)
     theFunc->getBasicBlockList().push_back(header);
     header->setParent(theFunc);
     Builder.SetInsertPoint(header);
-    Value* stmt = irEmit(whileStmt->stmt);
+    Value* stmt = irEmit(whileStmt->stmt.get());
     Builder.CreateBr(latch);
 
     theFunc->getBasicBlockList().push_back(latch);
     latch->setParent(theFunc);
     Builder.SetInsertPoint(latch);
     BasicBlockTarget::getInstance().setCond(header, exit);
-    cond = irEmit(whileStmt->cond);
+    cond = irEmit(whileStmt->cond.get());
     BasicBlockTarget::getInstance().exitCond();
     if(cond->getType() == Type::getInt32Ty())
         cond = Builder.CreateICmpNE(cond, ConstantInt::get(Type::getInt32Ty(), 0), "cond");
@@ -880,7 +861,7 @@ Value* irEmit(ReturnStmtNode* returnStmt)
         Builder.SetInsertPoint(dead);
         return ret;
     }
-    Value* expr = irEmit(returnStmt->expr);
+    Value* expr = irEmit(returnStmt->expr.get());
 
     auto func = Builder.GetInsertBlock()->getParent();
     if(func->getReturnType()->isIntegerTy() && expr->getType()->isFloatTy())
@@ -901,13 +882,13 @@ Value* privateInit(Constant* initial, Type* type, std::string name, bool is_cons
     return V;
 }
 
-bool getNumberArray(std::vector<ExprNode*> initial, std::vector<NumberNode*>& constInital)
+bool getNumberArray(std::vector<std::unique_ptr<ExprNode>>& initial, std::vector<NumberNode*>& constInital)
 {
     if(initial.empty())
         return true;
     constInital.clear();
-    for(auto expr : initial)
-        if(auto number = dynamic_cast<NumberNode*>(expr))
+    for(auto& expr : initial)
+        if(auto number = dynamic_cast<NumberNode*>(expr.get()))
             constInital.push_back(number);
         else
             return false;
@@ -959,7 +940,7 @@ Value* irEmit(ConstDeclNode* constDecl)
 
     Value* ret;
     auto& scope = ValueScope::getCurrentPtr();
-    for(auto def : constDecl->constDef)
+    for(auto& def : constDecl->constDef)
     {
         auto dim = def->dimSize.size();
         const std::string& name = def->name;
@@ -970,7 +951,7 @@ Value* irEmit(ConstDeclNode* constDecl)
         {
             if(def->constInitVal)
             {
-                initVal = irEmit(def->constInitVal->initItem.at(0));
+                initVal = irEmit(def->constInitVal->initItem.at(0).get());
                 if(!isSameType(initVal->getType(), type))
                 {
                     if(initVal->getType()->isIntegerTy())
@@ -1007,7 +988,7 @@ Value* irEmit(VarDeclNode* varDecl)
     AstType _type = varDecl->type;
 
     auto& scope = ValueScope::getCurrentPtr();
-    for(auto def : varDecl->varDef)
+    for(auto& def : varDecl->varDef)
     {
         auto dim = def->dimSize.size();
         const std::string& name = def->name;
@@ -1019,7 +1000,7 @@ Value* irEmit(VarDeclNode* varDecl)
         {
             if(def->varInitVal)
             {
-                initVal = irEmit(def->varInitVal->initItem.at(0));
+                initVal = irEmit(def->varInitVal->initItem.at(0).get());
                 if(!isSameType(initVal->getType(), type))
                 {
                     if(initVal->getType()->isIntegerTy())
@@ -1090,7 +1071,7 @@ GlobalValue* createGlobal(VarDefNode* def, AstType type)
         initial = ConstantFP::get(0.0f);
     if(def->varInitVal)
     {
-        if(auto number = dynamic_cast<NumberNode*>(def->varInitVal->initItem.at(0)))
+        if(auto number = dynamic_cast<NumberNode*>(def->varInitVal->initItem.at(0).get()))
         {
             if(type == INT)
                 initial = ConstantInt::get(_type, number->immediate.getInt());
@@ -1133,7 +1114,7 @@ GlobalValue* createGlobal(ConstDefNode* def, AstType type)
         initial = ConstantFP::get(0.0f);
     if(def->constInitVal)
     {
-        if(auto number = dynamic_cast<NumberNode*>(def->constInitVal->initItem.at(0)))
+        if(auto number = dynamic_cast<NumberNode*>(def->constInitVal->initItem.at(0).get()))
         {
             if(type == INT)
                 initial = ConstantInt::get(_type, number->immediate.getInt());
@@ -1152,30 +1133,30 @@ Module* emitIR(CompUnitNode* compUnit)
     initRuntime();
 
     auto& scope = ValueScope::getCurrentPtr();
-    for(auto item : compUnit->element)
+    for(auto& item : compUnit->element)
     {
-        if(auto decl = dynamic_cast<DeclNode*>(item))
+        if(auto decl = dynamic_cast<DeclNode*>(item.get()))
         {
             if(auto constDecl = dynamic_cast<ConstDeclNode*>(decl))
             {
                 AstType type = constDecl->type;
-                for(auto def : constDecl->constDef)
+                for(auto& def : constDecl->constDef)
                 {
-                    GlobalValue* V = createGlobal(def, type);
+                    GlobalValue* V = createGlobal(def.get(), type);
                     scope->insertAlloca(def->name, V);
                 }
             }
             else if(auto varDecl = dynamic_cast<VarDeclNode*>(decl))
             {
                 AstType type = varDecl->type;
-                for(auto def : varDecl->varDef)
+                for(auto& def : varDecl->varDef)
                 {
-                    GlobalValue* V = createGlobal(def, type);
+                    GlobalValue* V = createGlobal(def.get(), type);
                     scope->insertAlloca(def->name, V);
                 }
             }
         }
-        else if(auto funcDef = dynamic_cast<FuncDefNode*>(item))
+        else if(auto funcDef = dynamic_cast<FuncDefNode*>(item.get()))
         {
             auto func = irEmit(funcDef);
 

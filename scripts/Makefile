@@ -10,8 +10,8 @@ SYSYC_DIR = sysy
 
 BUILD_ANTLR_OBJ = $(addprefix $(BUILD_DIR)/$(ANTLR_DIR)/, $(ANTLR_OBJ))
 
-FRONTEND_OBJ = SysYParser.o SysYLexer.o Frontend.o Ast.o SysYVisitor.o AstDump.o AstTramsform.o
-SUPPORT_OBJ = strUtils.o typeUtils.o
+FRONTEND_OBJ = SysYParser.o SysYLexer.o Frontend.o Ast.o SysYVisitor.o AstDump.o AstTransform.o
+SUPPORT_OBJ = strUtils.o TypeUtils.o
 IR_OBJ = ValueScope.o Type.o Module.o User.o Value.o Builder.o IRGen.o Constant.o BasicBlock.o \
 			GlobalValue.o Instructions.o Use.o Function.o IRDump.o PassManager.o
 TARGET_OBJ = Block.o MCFunction.o MCInstruction.o MCModule.o Reg.o Regallocator.o

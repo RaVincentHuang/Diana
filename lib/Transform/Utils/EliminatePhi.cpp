@@ -5,7 +5,7 @@
 #include "sysy/IR/Instructions.h"
 #include "sysy/IR/Module.h"
 #include "sysy/IR/IRDump.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include <unordered_set>
 #include <vector>
 #include <algorithm>

@@ -1,6 +1,6 @@
 #include "sysy/IR/Type.h"
 #include "sysy/IR/Context.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 
 namespace sysy
 {

@@ -6,7 +6,7 @@
 #include "sysy/IR/Type.h"
 #include "sysy/IR/IRDump.h"
 #include "sysy/IR/Loop.h"
-#include "sysy/Support/strUtils.h"
+#include "sysy/Support/StrUtils.h"
 #include <set>
 #include <map>
 #include <fstream>

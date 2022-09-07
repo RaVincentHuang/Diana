@@ -1,4 +1,4 @@
-//===-------------------AstDump.h - The dumper of Ast ---*- C++ -*---------===//
+//===-----------AstTransform.h - The Transform passes of Ast -*- C++ -*-----===//
 //
 // Part of the Diana, a SysY Compiler, under the MIT License.
 // See https://github.com/RaVincentHuang/Diana/blob/master/LICENSE for license 
@@ -12,8 +12,8 @@
 /// base class for all of the VM instructions.
 ///
 //===----------------------------------------------------------------------===//
-#ifndef SYSY_ASTDUMP_H
-#define SYSY_ASTDUMP_H
+#ifndef SYSY_ASTTRANSFORM_H
+#define SYSY_ASTTRANSFORM_H
 
 #include "sysy/Frontend/Ast.h"
 
@@ -21,15 +21,14 @@ namespace sysy
 {
 namespace ast
 {
-    
-void dump(AstNode* node);
-    
-} // namespace ast  
+
+// void variableDelivery(StmtNode* stmt);
+
+void removeDeadStmts(BlockNode* block);
+
+void optimizeAst(CompUnitNode* ast);
+
+}
 } // namespace sysy
-
-
-
-
-
 
 #endif

@@ -7,8 +7,8 @@
 #include "sysy/Frontend/SysYVisitor.h"
 #include "sysy/Frontend/Ast.h"
 #include "sysy/Frontend/AstDump.h"
-#include "sysy/Support/debug.h"
-#include "sysy/Support/common.h"
+#include "sysy/Support/Debug.h"
+#include "sysy/Support/Common.h"
 #include "sysy/IR/IRGen.h"
 #include "sysy/IR/Module.h"
 #include "sysy/IR/IRDump.h"
@@ -22,6 +22,7 @@
 #include "sysy/Transform/IPO/IPDCE.h"
 #include "sysy/Transform/Transform.h"
 #include <iostream>
+#include <memory>
 #include <fstream>
 #include <sstream>
 
@@ -51,16 +52,24 @@ ir::Module* FrontendMain(const std::string& filename, const std::string& Gen)
         visitor.printSrc(parser.compUnit());
         return nullptr;
     }
-    auto ast = visitor.visitCompUnit(parser.compUnit()).as<ast::CompUnitNode*>();
+
+    auto unpackAny = [](antlrcpp::Any&& data) -> ast::CompUnitNode* {
+        if (data.isNull())
+            return nullptr;
+        return data.as<ast::CompUnitNode*>();
+    };
+
+    auto ast = std::unique_ptr<ast::CompUnitNode>(unpackAny(visitor.visitCompUnit(parser.compUnit())));
     // PrintMsg("Finish ast gen");
     if(Gen == "ast")
     {
-        dump(ast);
+        dump(ast.get());
         return nullptr;
     }
-    ir::Module* mod = ir::emitIR(ast);
+    ir::Module* mod = ir::emitIR(ast.get());
     if(Gen == "ir")
     {
+        ast.reset();
         PrintMsg("Basic IR");
         ir::dumpIR(mod);
         auto pm = new ir::SSASet;

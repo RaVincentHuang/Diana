@@ -1,6 +1,6 @@
 #include "sysy/Frontend/Semantics.h"
-#include "sysy/Frontend/AstTramsform.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Frontend/AstTransform.h"
+#include "sysy/Support/Debug.h"
 
 namespace sysy  
 {
@@ -96,7 +96,6 @@ void removeDeadStmts(BlockNode* block)
             block->blockItems.erase(iter + 1, block->blockItems.end());
             break;
         }
-    
 }
 
 void optimizeAst(CompUnitNode* ast)

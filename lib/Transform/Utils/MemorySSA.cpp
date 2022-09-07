@@ -5,7 +5,7 @@
 #include "sysy/IR/BasicBlock.h"
 #include "sysy/IR/Instructions.h"
 #include "sysy/IR/IRDump.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include <queue>
 #include <algorithm>
 namespace sysy

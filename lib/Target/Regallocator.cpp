@@ -3,7 +3,7 @@
 #include "sysy/Target/Instruction.h"
 #include "sysy/Target/Function.h"
 #include "sysy/Target/Reg.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include <cassert>
 #include <cmath>
 #include <iostream>

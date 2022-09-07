@@ -3,9 +3,9 @@
 #include "sysy/Target/Function.h"
 #include "sysy/Target/Block.h"
 #include "sysy/Target/Instruction.h"
-#include "sysy/Support/common.h"
+#include "sysy/Support/Common.h"
 #include "sysy/IR/IRDump.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include <cmath>
 #include <map>
 

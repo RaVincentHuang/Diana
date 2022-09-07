@@ -6,7 +6,7 @@
 #include "sysy/Analysis/Vertify.h"
 #include "sysy/Transform/Utils/Memory2Reg.h"
 #include "sysy/Transform/Scalar/DCE.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include <algorithm>
 #include <queue>
 #include <unordered_set>

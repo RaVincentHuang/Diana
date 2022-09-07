@@ -1,7 +1,0 @@
-<map id="sysy::ir::BinaryInstrcution" name="sysy::ir::BinaryInstrcution">
-<area shape="rect" id="node1" title=" " alt="" coords="5,323,192,349"/>
-<area shape="rect" id="node2" href="$classsysy_1_1ir_1_1Instruction.html" title=" " alt="" coords="26,247,171,273"/>
-<area shape="rect" id="node3" href="$classsysy_1_1ir_1_1User.html" title=" " alt="" coords="45,171,152,197"/>
-<area shape="rect" id="node4" href="$classsysy_1_1ir_1_1Value.html" title=" " alt="" coords="43,95,155,121"/>
-<area shape="rect" id="node5" href="$classsysy_1_1ir_1_1Type.html" title=" " alt="" coords="45,5,152,32"/>
-</map>

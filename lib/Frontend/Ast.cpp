@@ -1,5 +1,5 @@
 #include "sysy/Frontend/Ast.h"
-#include "sysy/Support/common.h"
+#include "sysy/Support/Common.h"
 
 namespace sysy
 {
@@ -343,7 +343,7 @@ LvalNode::~LvalNode()
 
 
 // NumberNode
-NumberNode::NumberNode( AstType _type,
+NumberNode::NumberNode(AstType _type,
                         Immediate _immediate)
     : ExprNode(AST_Number, _type), immediate(_immediate) {}
 

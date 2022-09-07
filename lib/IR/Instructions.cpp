@@ -1,6 +1,6 @@
 #include "sysy/IR/Instructions.h"
 #include "sysy/IR/Function.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 #include <algorithm>
 
 namespace sysy

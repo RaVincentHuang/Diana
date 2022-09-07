@@ -1,7 +1,7 @@
 #ifndef SYSY_IR_PASSMANAGER_H
 #define SYSY_IR_PASSMANAGER_H
 
-#include "sysy/Support/strUtils.h"
+#include "sysy/Support/StrUtils.h"
 #include <iostream>
 #include <vector>
 #include <functional>

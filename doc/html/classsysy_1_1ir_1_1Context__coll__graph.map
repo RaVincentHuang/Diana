@@ -1,9 +1,0 @@
-<map id="sysy::ir::Context" name="sysy::ir::Context">
-<area shape="rect" id="node1" title=" " alt="" coords="419,96,545,123"/>
-<area shape="rect" id="node2" href="$classsysy_1_1ir_1_1FloatType.html" title=" " alt="" coords="168,5,307,32"/>
-<area shape="rect" id="node3" href="$classsysy_1_1ir_1_1Type.html" title=" " alt="" coords="5,107,112,133"/>
-<area shape="rect" id="node4" href="$classsysy_1_1ir_1_1UndefType.html" title=" " alt="" coords="165,56,310,83"/>
-<area shape="rect" id="node5" href="$classsysy_1_1ir_1_1LableType.html" title=" " alt="" coords="167,107,308,133"/>
-<area shape="rect" id="node6" href="$classsysy_1_1ir_1_1IntegerType.html" title=" " alt="" coords="161,159,313,185"/>
-<area shape="rect" id="node7" href="$classsysy_1_1ir_1_1VoidType.html" title=" " alt="" coords="170,213,305,240"/>
-</map>

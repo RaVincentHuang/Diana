@@ -1,5 +1,5 @@
 #include "sysy/IR/ValueScope.h"
-#include "sysy/Support/debug.h"
+#include "sysy/Support/Debug.h"
 
 namespace sysy
 {
